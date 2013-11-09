@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+//using System.Windows.Navigation.NavigationService;
 using System.Windows.Shapes;
 
 namespace Library
@@ -23,5 +24,21 @@ namespace Library
         {
             InitializeComponent();
         }
+		public void DragWindow(object sender, MouseButtonEventArgs args)
+        {
+            this.DragMove();
+        }
+		public void ExitClick(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWin win = new MainWin(this);
+            win.Show();
+            this.Hide();
+        }
+		
     }
 }

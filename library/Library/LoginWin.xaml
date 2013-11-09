@@ -1,0 +1,41 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="Library.MainWindow"
+        Title="MainWindow" Height="350" Width="696" ResizeMode="NoResize" WindowStyle="None" Background="{x:Null}" AllowsTransparency="True" MouseLeftButtonDown="DragWindow">
+	
+	<Window.Foreground>
+		<ImageBrush ImageSource="login_box.gif"/>
+	</Window.Foreground>
+	
+    <Grid>
+    	<Grid.Background>
+    		<ImageBrush ImageSource="login_box.gif" Stretch="Uniform"></ImageBrush>  	
+		</Grid.Background>
+    	<Grid Margin="327,137,41,58" d:LayoutOverrides="HorizontalAlignment">
+    		<Label Content="用户名" HorizontalAlignment="Left" Margin="9,12,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+    		<Label Content="密    码" HorizontalAlignment="Left" Margin="9,46,0,0" Height="26.837" VerticalAlignment="Top" FontWeight="Bold"/>
+    		<TextBox Margin="79,15,66,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23.837">
+    			<TextBox.BorderBrush>
+    				<LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+    					<GradientStop Color="#FFABADB3" Offset="0.05"/>
+    					<GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+    					<GradientStop Color="#FFF5E319" Offset="1"/>
+    				</LinearGradientBrush>
+    			</TextBox.BorderBrush>
+    		</TextBox>
+    		<TextBox Margin="79,49,66,0" TextWrapping="Wrap" Height="23.837" VerticalAlignment="Top">
+    			<TextBox.BorderBrush>
+    				<LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+    					<GradientStop Color="#FFABADB3" Offset="0.05"/>
+    					<GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+    					<GradientStop Color="#FFF5E319" Offset="1"/>
+    				</LinearGradientBrush>
+    			</TextBox.BorderBrush>
+    		</TextBox>
+    		<Button Content="登录" Margin="47,0,0,18" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Click="Button_Click" />
+    		<Button x:Name="button" Content="退出" Margin="160,0,86,18" VerticalAlignment="Bottom" Click="ExitClick"/>
+    	</Grid>
+        
+    </Grid>
+</Window>
