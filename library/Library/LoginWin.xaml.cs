@@ -35,7 +35,7 @@ namespace Library
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainWin win = new MainWin(this);
+            MainForm win = new MainForm(this);
             win.Show();
             this.Hide();
         }

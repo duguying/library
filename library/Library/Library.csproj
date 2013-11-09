@@ -67,18 +67,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainWin.Designer.cs">
-      <DependentUpon>MainWin.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginWin.xaml.cs">
       <DependentUpon>LoginWin.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewBook.Designer.cs">
+      <DependentUpon>NewBook.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,8 +98,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="MainWin.resx">
-      <DependentUpon>MainWin.cs</DependentUpon>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewBook.resx">
+      <DependentUpon>NewBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
