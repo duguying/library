@@ -59,6 +59,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FindBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindBookForm.Designer.cs">
+      <DependentUpon>FindBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateBookForm.Designer.cs">
+      <DependentUpon>UpdateBookForm.cs</DependentUpon>
+    </Compile>
     <Page Include="LoginWin.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -79,11 +91,11 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewBook.cs">
+    <Compile Include="NewBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewBook.Designer.cs">
-      <DependentUpon>NewBook.cs</DependentUpon>
+    <Compile Include="NewBookForm.Designer.cs">
+      <DependentUpon>NewBookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -98,15 +110,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="FindBookForm.resx">
+      <DependentUpon>FindBookForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewBook.resx">
-      <DependentUpon>NewBook.cs</DependentUpon>
+    <EmbeddedResource Include="NewBookForm.resx">
+      <DependentUpon>NewBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateBookForm.resx">
+      <DependentUpon>UpdateBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

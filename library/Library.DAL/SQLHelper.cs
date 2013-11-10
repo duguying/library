@@ -10,12 +10,13 @@ namespace SQLHelper
     public class SQLHelper
     {
         #region //数据库连接串
-        private static readonly string database = ConfigurationManager.AppSettings["database"].ToString();
-        private static readonly string uid = ConfigurationManager.AppSettings["uid"].ToString();
-        private static readonly string pwd = ConfigurationManager.AppSettings["pwd"].ToString();
-        private static readonly string server = ConfigurationManager.AppSettings["server"].ToString();
+        private static readonly string database = "library";//ConfigurationManager.AppSettings["database"].ToString();
+        private static readonly string uid = "sa";//ConfigurationManager.AppSettings["uid"].ToString();
+        private static readonly string pwd = "lijun";//ConfigurationManager.AppSettings["pwd"].ToString();
+        private static readonly string server = "127.0.0.1";//ConfigurationManager.AppSettings["server"].ToString();
         private static readonly string condb = "server='"+ server +"';database='" + database + "';uid='" + uid + "';pwd='" + pwd + "';Max Pool Size=100000;Min Pool Size=0;Connection Lifetime=0;packet size=32767;Connection Reset=false; async=true";
         #endregion
+
         #region//DataAdapter方法 返回DataSet数据集
 
         /// <summary>
