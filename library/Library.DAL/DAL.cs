@@ -7,5 +7,9 @@ namespace Library.DAL
 {
     public class DAL
     {
+        public void findBook() 
+        {
+            
+        }
     }
 }
