@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 using System.Windows.Forms;
+//using Library.DAL;
 
 namespace Library
 {
@@ -90,7 +91,12 @@ namespace Library
         //更新图书信息
         private void UpdateBook(object sender, EventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show("新书入库菜单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            //System.Windows.Forms.MessageBox.Show("新书入库菜单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            UpdateBookForm fub = new UpdateBookForm();
+            fub.MdiParent = this;
+            fub.StartPosition = FormStartPosition.CenterScreen;
+            fub.WindowState = FormWindowState.Maximized;
+            fub.Show();
         }
 
         //办理借书证
@@ -153,6 +159,25 @@ namespace Library
 
         }
 #endregion
+
+        private void AddUser(object sender, EventArgs e)
+        {
+            //System.Windows.Forms.MessageBox.Show("添加用户", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            AdduserForm fau = new AdduserForm();
+            fau.MdiParent = this;
+            fau.StartPosition = FormStartPosition.CenterScreen;
+            fau.WindowState = FormWindowState.Maximized;
+            fau.Show();
+        }
+
+        private void SearchBook(object sender, EventArgs e)
+        {
+            SearchForm fsb = new SearchForm();
+            fsb.MdiParent = this;
+            fsb.StartPosition = FormStartPosition.CenterScreen;
+            fsb.WindowState = FormWindowState.Maximized;
+            fsb.Show();
+        }
 
 
     }

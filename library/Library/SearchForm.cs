@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Library
 {
-    public partial class FindBookForm : Form
+    public partial class SearchForm : Form
     {
-        public FindBookForm()
+        public SearchForm()
         {
             InitializeComponent();
         }

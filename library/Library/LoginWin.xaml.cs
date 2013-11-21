@@ -10,8 +10,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-//using System.Windows.Navigation.NavigationService;
 using System.Windows.Shapes;
+//using Library;
+//using Library.DAL;
 
 namespace Library
 {
@@ -37,7 +38,7 @@ namespace Library
         {
             string username=this.tb_username.Text;
             string password = this.tb_password.Password;
-            bool rst = DAL.DAL.login(username, password);
+            bool rst = Library.DAL.DAL.login(username, password);
             if (rst)
             {
                 MainForm win = new MainForm(this);

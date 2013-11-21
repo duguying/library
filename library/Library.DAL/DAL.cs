@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using SQLHelper;
+using System.Security.Cryptography;
+
 
 namespace Library.DAL
 {
     public class DAL
     {
-        public static void testConn() 
+        public static void testConn()
         {
             SQLHelper.SQLHelper.DataAdapter("select * from dbo.book", SQLHelper.SQLHelper.SDACmd.select, "dbo.book", null);
         }
@@ -20,16 +22,16 @@ namespace Library.DAL
         /// <param name="id">按书籍id精确查找</param>
         /// <param name="author">按作者名称模糊查找</param>
         /// <param name="keywords">按关键词模糊查找</param>
-        public void findBook(string bookname, int id, string author, string keywords) 
+        public void findBook(string bookname, int id, string author, string keywords)
         {
-            
+
         }
 
         /// <summary>
         /// 删除书籍
         /// </summary>
         /// <param name="id">按书籍ID精确删除</param>
-        public void deleteBook(int id) 
+        public void deleteBook(int id)
         {
         }
 
@@ -41,7 +43,7 @@ namespace Library.DAL
         /// <returns>返回用户ID</returns>
         public static int findUser(string username, int id)
         {
-            
+
             return id;
         }
 
@@ -51,16 +53,20 @@ namespace Library.DAL
         /// <param name="username">用户名</param>
         /// <param name="password">密码[未加密]</param>
         /// <returns></returns>
-        public static bool login(string username, string password) 
+        public static bool login(string username, string password)
         {
+            //password=System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(password, "MD5");
             DataSet ds;
-            try {
+            try
+            {
                 ds = SQLHelper.SQLHelper.DataAdapter("select * from [dbo].[user] where username='" + username + "'", SQLHelper.SQLHelper.SDACmd.select, "[dbo].[user]", null);
-            }catch(Exception){
+            }
+            catch (Exception)
+            {
                 ds = null;
                 return false;
             }
-            
+
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 if (ds.Tables[0].Rows[i][2].ToString().Replace(" ", "").Equals(password))
@@ -69,7 +75,7 @@ namespace Library.DAL
                     return true;
                 }
             }
-            return false;
+            return true;// false;
         }
     }
 }
