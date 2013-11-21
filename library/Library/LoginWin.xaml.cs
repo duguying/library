@@ -35,9 +35,19 @@ namespace Library
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainForm win = new MainForm(this);
-            win.Show();
-            this.Hide();
+            string username=this.tb_username.Text;
+            string password = this.tb_password.Password;
+            bool rst = DAL.DAL.login(username, password);
+            if (rst)
+            {
+                MainForm win = new MainForm(this);
+                win.Show();
+                this.Hide();
+            }
+            else {
+                MessageBox.Show("登录失败！");
+            }
+            
         }
 		
     }

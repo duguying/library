@@ -15,7 +15,7 @@
     	<Grid Margin="327,137,41,58" d:LayoutOverrides="HorizontalAlignment">
     		<Label Content="用户名" HorizontalAlignment="Left" Margin="9,12,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
     		<Label Content="密    码" HorizontalAlignment="Left" Margin="9,46,0,0" Height="26.837" VerticalAlignment="Top" FontWeight="Bold"/>
-    		<TextBox Margin="79,15,66,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23.837">
+    		<TextBox Margin="79,15,66,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="23.837" Name="tb_username">
     			<TextBox.BorderBrush>
     				<LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
     					<GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -24,18 +24,11 @@
     				</LinearGradientBrush>
     			</TextBox.BorderBrush>
     		</TextBox>
-    		<TextBox Margin="79,49,66,0" TextWrapping="Wrap" Height="23.837" VerticalAlignment="Top">
-    			<TextBox.BorderBrush>
-    				<LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
-    					<GradientStop Color="#FFABADB3" Offset="0.05"/>
-    					<GradientStop Color="#FFE2E3EA" Offset="0.07"/>
-    					<GradientStop Color="#FFF5E319" Offset="1"/>
-    				</LinearGradientBrush>
-    			</TextBox.BorderBrush>
-    		</TextBox>
-    		<Button Content="登录" Margin="47,0,0,18" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Click="Button_Click" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="79,46,0,0" Name="tb_password" VerticalAlignment="Top" Width="161" />
+            <Button Content="登录" Margin="47,0,0,18" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Click="Button_Click" />
     		<Button x:Name="button" Content="退出" Margin="160,0,86,18" VerticalAlignment="Bottom" Click="ExitClick"/>
-    	</Grid>
+            
+        </Grid>
         
     </Grid>
 </Window>

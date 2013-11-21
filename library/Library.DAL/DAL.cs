@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
+using SQLHelper;
 
 namespace Library.DAL
 {
     public class DAL
     {
+        public static void testConn() 
+        {
+            SQLHelper.SQLHelper.DataAdapter("select * from dbo.book", SQLHelper.SQLHelper.SDACmd.select, "dbo.book", null);
+        }
         /// <summary>
         /// 查找书籍
         /// </summary>
@@ -27,7 +33,43 @@ namespace Library.DAL
         {
         }
 
-        public void findUser()
-        { }
+        /// <summary>
+        /// 查找用户
+        /// </summary>
+        /// <param name="username">按用户名模糊查找</param>
+        /// <param name="id">按ID精确查找</param>
+        /// <returns>返回用户ID</returns>
+        public static int findUser(string username, int id)
+        {
+            
+            return id;
+        }
+
+        /// <summary>
+        /// 登录验证
+        /// </summary>
+        /// <param name="username">用户名</param>
+        /// <param name="password">密码[未加密]</param>
+        /// <returns></returns>
+        public static bool login(string username, string password) 
+        {
+            DataSet ds;
+            try {
+                ds = SQLHelper.SQLHelper.DataAdapter("select * from [dbo].[user] where username='" + username + "'", SQLHelper.SQLHelper.SDACmd.select, "[dbo].[user]", null);
+            }catch(Exception){
+                ds = null;
+                return false;
+            }
+            
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                if (ds.Tables[0].Rows[i][2].ToString().Replace(" ", "").Equals(password))
+                {
+                    string value = ds.Tables[0].Rows[i][1].ToString();
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }
