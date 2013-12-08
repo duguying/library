@@ -14,11 +14,13 @@ namespace Library
     public partial class MainForm : Form
     {
         public Window t_main;
+        public static Form main_form;
         //private int childFormNumber = 0;
 
         public MainForm(Window t_main)
         {
             this.t_main = t_main;
+            MainForm.main_form = this;
             InitializeComponent();
         }
 

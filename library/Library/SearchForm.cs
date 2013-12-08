@@ -15,5 +15,19 @@ namespace Library
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// 书籍查询动作
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void searchBookClick(object sender, EventArgs e)
+        {
+            BookListForm blf=new BookListForm();
+            blf.MdiParent = MainForm.main_form;
+            blf.StartPosition = FormStartPosition.CenterScreen;
+            blf.WindowState = FormWindowState.Maximized;
+            blf.Show();
+        }
     }
 }
