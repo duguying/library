@@ -44,9 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL.cs" />
+    <Compile Include="AdminDAL.cs" />
+    <Compile Include="BookDAL.cs" />
+    <Compile Include="BorrowDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderDAL.cs" />
+    <Compile Include="ReaderTypeDAL.cs" />
     <Compile Include="SQLHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.Model\Library.Model.csproj">
+      <Project>{D89E5300-FEEE-4654-B883-DBD77BA11D83}</Project>
+      <Name>Library.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

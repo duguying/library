@@ -6,7 +6,7 @@ using System.Text;
 namespace Library.Model
 {
     [Serializable]
-    class Reader
+    public class Reader
     {
         public Reader() { }
 

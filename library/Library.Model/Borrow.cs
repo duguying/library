@@ -6,7 +6,7 @@ using System.Text;
 namespace Library.Model
 {
     [Serializable]
-    class Borrow
+    public class Borrow
     {
         public Borrow() { }
 

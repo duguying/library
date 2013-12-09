@@ -6,7 +6,7 @@ using System.Text;
 namespace Library.Model
 {
     [Serializable]
-    class Admin
+    public class Admin
     {
         public Admin() { }
 
