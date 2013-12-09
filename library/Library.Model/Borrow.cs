@@ -21,7 +21,7 @@ namespace Library.Model
         public int ldOverDay { get; set; }//超期天数
         public float ldOverMoney { get; set; }//超期金额
         public float ldPunishMoney { get; set; }//罚款金额
-        public bool lsHasReturn { get; set; }//是否已经还书，缺省为0-未还
+        public bool IsHasReturn { get; set; }//是否已经还书，缺省为0-未还
         public int OperatorLendId { get; set; }//借书操作员
         public int OperatorRetId { get; set; }//还书操作员
         #endregion

@@ -12,6 +12,11 @@ namespace Library.DAL
     public class ReaderDAL
     {
         #region 表基本操作
+        /// <summary>
+        /// 添加读者
+        /// </summary>
+        /// <param name="reader_record"></param>
+        /// <returns></returns>
         public static int Add(Reader reader_record)
         {
             int rows = 0;
@@ -74,6 +79,11 @@ rdHaveBorrowNum
 
             return rows;
         }
+        /// <summary>
+        /// 删除读者
+        /// </summary>
+        /// <param name="reader_record"></param>
+        /// <returns></returns>
         public static int Delete(Reader reader_record)
         {
             int rows = 0;
@@ -96,6 +106,11 @@ rdHaveBorrowNum
 
             return rows;
         }
+        /// <summary>
+        /// 修改读者信息
+        /// </summary>
+        /// <param name="reader_record"></param>
+        /// <returns></returns>
         public static int Update(Reader reader_record)
         {
             int rows = 0;
