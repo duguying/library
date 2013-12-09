@@ -43,6 +43,16 @@
     <Compile Include="BLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library.DAL\Library.DAL.csproj">
+      <Project>{86ABE8E3-81D4-414C-A181-926477CCCDA5}</Project>
+      <Name>Library.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Model\Library.Model.csproj">
+      <Project>{D89E5300-FEEE-4654-B883-DBD77BA11D83}</Project>
+      <Name>Library.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
