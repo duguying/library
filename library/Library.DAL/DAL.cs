@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using System.Data.SqlClient;
 using SQLHelper;
 using System.Security.Cryptography;
 
@@ -24,7 +25,19 @@ namespace Library.DAL
         /// <param name="keywords">按关键词模糊查找</param>
         public void findBook(string bookname, int id, string author, string keywords)
         {
+            SqlParameter[] paraList = new SqlParameter[7];
+            string sql = "select * from dbo.book where id=@id or title='@bookname' or author='@author' or press like '%@keywords%' or description like '%@keywords%' or title like '%@bookname%' or author like '%@author%'";
+            paraList[0] = new SqlParameter("@id", SqlDbType.Int);
+            paraList[0].Value = id;
+            paraList[1] = new SqlParameter("@bookname", SqlDbType.VarChar, 50);
+            paraList[1].Value = bookname;
+            paraList[2] = new SqlParameter("@author", SqlDbType.VarChar, 10);
+            paraList[2].Value = author;
+            paraList[3] = new SqlParameter("@keywords", SqlDbType.VarChar, 50);
+            paraList[3].Value = keywords;
 
+            DataSet ds;
+            ds = SQLHelper.SQLHelper.DataAdapter(sql, SQLHelper.SQLHelper.SDACmd.select, "dbo.book", paraList);
         }
 
         /// <summary>
