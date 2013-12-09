@@ -65,7 +65,7 @@ namespace Library.DAL
         }
         #endregion
 
-        private static string _strConnection = @"127.0.0.1;Initial Catalog=library;User ID=sa;Password=lijun;";
+        private static string _strConnection = "server='127.0.0.1';database='library';uid='sa';pwd='lijun'";
         //private static string _strConnection =File.ReadAllText(@"..\..\ConnectionString.txt");
         //public string strConnection
         //{
@@ -75,9 +75,9 @@ namespace Library.DAL
         private static SqlConnection conn = new SqlConnection(_strConnection);
         //private static SqlConnection conn = new SqlConnection(Decrypt(ConfigurationSettings.AppSettings["connectionstring"]));
 
-        #region 数据库连接的打开与关闭
+        #region 数据库连接的打开与关闭 测试完毕后改为private
         //打开数据库连接
-        private static void OpenConn()
+        public static void OpenConn()
         {
             try
             {
@@ -89,13 +89,13 @@ namespace Library.DAL
             catch(Exception ex) 
             {
                // if (!(pi.PropertyType.FullName == "System.Byte[]" && source[pi.Name] == DBNull.Value))
-               // throw new Exception("MS SQL Server数据库连接失败！");
-                throw new Exception(ex.Message);
+               throw new Exception("MS SQL Server数据库连接失败！");
+               //throw new Exception(ex.Message);
             }
         }
         
         //关闭数据库连接
-        private static void CloseConn()
+        public static void CloseConn()
         {
             if (conn!=null)
             {

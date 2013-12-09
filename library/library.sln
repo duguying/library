@@ -30,6 +30,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "library_web", "..\library_w
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Test", "Library.Test\Library.Test.csproj", "{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -90,6 +92,16 @@ Global
 		{CF7F6566-4945-4089-9741-AAEE914CD9AC}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{CF7F6566-4945-4089-9741-AAEE914CD9AC}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
 		{CF7F6566-4945-4089-9741-AAEE914CD9AC}.Release|x86.ActiveCfg = Debug|Any CPU
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Debug|x86.ActiveCfg = Debug|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Debug|x86.Build.0 = Debug|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Release|Any CPU.ActiveCfg = Release|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Release|Mixed Platforms.Build.0 = Release|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Release|x86.ActiveCfg = Release|x86
+		{385DCE00-D162-46E4-ABBE-3C2F9716C0B3}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
