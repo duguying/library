@@ -9,7 +9,7 @@ using Library.Model;
 namespace Library.DAL
 {
     [Serializable]
-    class ReaderTypeDAL
+    public class ReaderTypeDAL
     {
         #region 表基本操作
         /// <summary>
@@ -22,7 +22,7 @@ namespace Library.DAL
             int rows = 0;
 
             #region SQL 语句准备
-            string sql = "insert into TB_ReaderType(rdType,rdTypeName,maxBorrowNum,maxBorrowDay,maxContinueTimes)values(@rdType,@rdTpyeName,@maxBorrowNum,@maxBorrowDay,@maxContinueTimes)";
+            string sql = @"insert into TB_ReaderType(rdType,rdTypeName,maxBorrowNum,maxBorrowDay,maxContinueTimes)values(@rdType,@rdTypeName,@maxBorrowNum,@maxBorrowDay,@maxContinueTimes)";
             SqlParameter[] parameters = { 
                                             new SqlParameter("@rdType",reader_type_record.rdType),
                                             new SqlParameter("@rdTypeName",reader_type_record.rdTypeName),
@@ -49,7 +49,7 @@ namespace Library.DAL
         {
             int rows=0;
             #region SQL 语句准备
-            string sql = "delete from TB_ReaderType where rdType=@rdType";
+            string sql = @"delete from TB_ReaderType where rdType=@rdType";
             SqlParameter[] parameters = { 
                                             new SqlParameter("@rdType",reader_type_record.rdType)
                                         };
@@ -75,7 +75,7 @@ namespace Library.DAL
         {
             int rows = 0;
             #region SQL 语句准备
-            string sql = "update TB_ReaderType set rdTypeName=@rdTypeName,maxBorrowNum=@maxBorrowNum,maxBorrowDay=@maxBorrowDay,maxContinueTimes=@maxContinueTimes where rdType=@rdType";
+            string sql = @"update TB_ReaderType set rdTypeName=@rdTypeName,maxBorrowNum=@maxBorrowNum,maxBorrowDay=@maxBorrowDay,maxContinueTimes=@maxContinueTimes where rdType=@rdType";
             SqlParameter[] parameters = { 
                                             new SqlParameter("@rdType",reader_type_record.rdType),
                                             new SqlParameter("@rdTypeName",reader_type_record.rdTypeName),
