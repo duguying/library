@@ -38,16 +38,16 @@ namespace Library
         {
             string username=this.tb_username.Text;
             string password = this.tb_password.Password;
-            bool rst = Library.DAL.DAL.login(username, password);
-            if (rst)
-            {
-                MainForm win = new MainForm(this);
-                win.Show();
-                this.Hide();
-            }
-            else {
-                MessageBox.Show("登录失败！");
-            }
+            //bool rst = Library.DAL.DAL.login(username, password);
+            //if (rst)
+            //{
+            //    MainForm win = new MainForm(this);
+            //    win.Show();
+            //    this.Hide();
+            //}
+            //else {
+            //    MessageBox.Show("登录失败！");
+            //}
             
         }
 		
