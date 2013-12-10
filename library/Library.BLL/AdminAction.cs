@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Library.DAL;
+using Library.Model;
 
 namespace Library.BLL
 {
@@ -20,10 +21,20 @@ namespace Library.BLL
             username = username.Trim();
             password = password.Trim();
 
-            string rstpwd=AdminDAL.getAdminByUsername(username).adminPassword;
-            if(rstpwd==password){
-                login_result = true;
+            Admin rstobj = AdminDAL.getAdminByUsername(username);
+            
+            if (rstobj == null)
+            {
+                login_result = false;
             }
+            else {
+                string rstpwd = rstobj.adminPassword;
+                if (rstpwd == password)
+                {
+                    login_result = true;
+                }
+            }
+            
             return login_result;
         }
     }

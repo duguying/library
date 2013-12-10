@@ -156,13 +156,20 @@ where adminId=@adminId
                                             new SqlParameter("@adminUsername",username),
                                         };
             DataTable tb = SqlHelper.GetDataTable(sql, parameters, "TB_Admin");
-            Admin adr = new Admin();
-            adr.adminId=(int)tb.Rows[0].ItemArray[0];
-            adr.adminUsername = (string)tb.Rows[0].ItemArray[1].ToString();
-            adr.adminPassword = (string)tb.Rows[0].ItemArray[2].ToString();
-            adr.adminEmail = (string)tb.Rows[0].ItemArray[3].ToString();
-            adr.adminLastLoginDate = (DateTime)tb.Rows[0].ItemArray[4];
-            return adr;
+            if (0 != tb.Rows.Count)
+            {
+                Admin adr = new Admin();
+                adr.adminId = (int)tb.Rows[0].ItemArray[0];
+                adr.adminUsername = (string)tb.Rows[0].ItemArray[1].ToString();
+                adr.adminPassword = (string)tb.Rows[0].ItemArray[2].ToString();
+                adr.adminEmail = (string)tb.Rows[0].ItemArray[3].ToString();
+                adr.adminLastLoginDate = (DateTime)tb.Rows[0].ItemArray[4];
+                return adr;
+            }
+            else {
+                return null;
+            }
+            
         }
 
         #endregion
