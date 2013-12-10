@@ -116,7 +116,11 @@ where rdType=@rdType
         #endregion
 
         #region ReaderType表扩展操作
-        public static DataRow GetDRByID() {
+        public static DataRow GetDRByID(int rdType)
+        {
+            return null;
+        }
+        public static ReaderType GetObjectById(int rdType) {
             return null;
         }
         #endregion

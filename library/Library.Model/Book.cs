@@ -19,7 +19,8 @@ namespace Library.Model
         public string bkDatePress { get; set; }//出版时间
         public string bkISBN { get; set; }//ISBN
         public string bkCatalog { get; set; }//分类
-        public string bkLanguage { get; set; }//书籍语种
+        public int bkLanguage { get; set; }//书籍语种 : 语言，0-中文，1-英文，2-日文，3-俄文，4-德文，5-法文
+
         public int bkPages { get; set; }//页数
         public float bkPrice { get; set; }//价格
         public string bkDateIn { get; set; }//入馆日期

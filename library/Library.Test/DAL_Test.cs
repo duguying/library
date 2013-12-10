@@ -15,11 +15,12 @@ namespace Library.Test
         }
         public static void ConnectDataBase()
         {
+            
             #region DAL.ReaderType测试
             Console.WriteLine("DAL.SqlHelper:测试数据库连接...");
             SqlHelper.OpenConn();
 
-            Console.WriteLine("DAL.SqlHelper:测试数据库关闭...");
+            Console.WriteLine("DAL.SqlHelper:测试数据库关闭...\n");
             SqlHelper.CloseConn();
 
             Console.WriteLine("Model.ReaderType:测试创建数据单元...");
@@ -42,9 +43,10 @@ namespace Library.Test
             ReaderTypeDAL.Update(rdt1);
 
             ReaderTypeDAL.Delete(rdt1);
-            Console.WriteLine("数据已清理");
+            Console.WriteLine("数据已清理\n");
             #endregion
 
+            #region DAL.Reader测试
             Console.WriteLine("Model.Reader:测试创建数据单元...");
             Reader rd1 = new Reader();
             rd1.rdID = 1;
@@ -69,12 +71,101 @@ namespace Library.Test
 
             string old_rdPassword = rd1.rdPassword;
             rd1.rdPassword = "密码";
-            Console.WriteLine("DAL.ReaderType:测试Update()...rdType由" + old_rdPassword + "改为" + rd1.rdPassword);
-            Console.WriteLine("DAL.Reader:测试Update()...");
+            Console.WriteLine("DAL.Reader:测试Update()...rdPassword由" + old_rdPassword + "改为" + rd1.rdPassword);
             ReaderDAL.Update(rd1);
 
             ReaderDAL.Delete(rd1);
-            Console.WriteLine("数据已清理");
+            Console.WriteLine("数据已清理\n");
+            #endregion
+
+            #region DAL.Borrow测试
+            Console.WriteLine("Model.Borrow:测试创建数据单元...");
+            Borrow br1 = new Borrow();
+            br1.borrowId = 1;
+            br1.bkId = 1;
+            br1.ldContinueTimes = 0;
+            br1.ldDateOut = DateTime.Now.ToString();
+            br1.ldDateRetPlan = DateTime.Now.ToString();
+            br1.ldDateRetAct = DateTime.Now.ToString();
+            br1.ldOverDay = 12;
+            br1.ldOverMoney = 1.2f;
+            br1.IsHasReturn = false;
+            br1.OperatorLendId = 1;
+            br1.OperatorRetId = 0;
+
+            Console.WriteLine("DAL.Borrow:测试Delete()...");
+            BorrowDAL.Delete(br1);
+
+            Console.WriteLine("DAL.Borrow:测试Add()...");
+            BorrowDAL.Add(br1);
+
+            float old_ldPunishMoney = br1.ldPunishMoney;
+            br1.ldPunishMoney = 2.4f;
+            Console.WriteLine("DAL.Borrow:测试Update()...ldPunishMoney由" + old_ldPunishMoney + "改为" + br1.ldPunishMoney);
+            BorrowDAL.Update(br1);
+
+            BorrowDAL.Delete(br1);
+            Console.WriteLine("数据已清理\n");
+            #endregion
+
+            #region DAL.Book测试
+            Console.WriteLine("Model.Book:测试创建数据单元...");
+            Book bk1 = new Book();
+            bk1.bkId = 1;
+            bk1.bkCode = "1234";
+            bk1.bkName = "测试书籍";
+            bk1.bkAuthor = "作者";
+            bk1.bkPress = "出版社";
+            bk1.bkDatePress = DateTime.Now.ToString();
+            bk1.bkISBN = "92520111234";
+            bk1.bkCatalog = "计算机科学";
+            bk1.bkLanguage = 0;
+            bk1.bkPages = 300;
+            bk1.bkPrice = 30.5f;
+            bk1.bkDateIn = DateTime.Now.ToString();
+            bk1.bkBrief = "Go语言基础教程";
+            bk1.bkCover = Encoding.Default.GetBytes("test");
+            bk1.bkStatus = "在馆";
+
+            Console.WriteLine("DAL.Book:测试Delete()...");
+            BookDAL.Delete(bk1);
+
+            Console.WriteLine("DAL.Book:测试Add()...");
+            BookDAL.Add(bk1);
+
+            string old_bkName = bk1.bkName;
+            bk1.bkName = "Go语言云动力";
+            Console.WriteLine("DAL.Book:测试Update()...bkName由" + old_bkName + "改为" + bk1.bkName);
+            BookDAL.Update(bk1);
+
+            BookDAL.Delete(bk1);
+            Console.WriteLine("数据已清理\n");
+            #endregion
+
+            #region DAL.Admin测试
+            Console.WriteLine("Model.Admin:测试创建数据单元...");
+            Admin ad1 = new Admin();
+            ad1.adminId = 1;
+            ad1.adminUsername = "1234";
+            ad1.adminPassword = "测试书籍";
+            ad1.adminEmail = "作者";
+            ad1.adminLastLoginDate = DateTime.Now.ToString();
+
+            Console.WriteLine("DAL.Admin:测试Delete()...");
+            AdminDAL.Delete(ad1);
+
+            Console.WriteLine("DAL.Admin:测试Add()...");
+            AdminDAL.Add(ad1);
+
+            string old_adminPassword = ad1.adminPassword;
+            ad1.adminPassword = "guanliyuanyonghu@mi~ma";
+            Console.WriteLine("DAL.Admin:测试Update()...bkName由" + old_adminPassword + "改为" + ad1.adminPassword);
+            AdminDAL.Update(ad1);
+
+            AdminDAL.Delete(ad1);
+            Console.WriteLine("数据已清理\n");
+            #endregion
+            
         }
     }
 }

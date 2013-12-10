@@ -159,6 +159,10 @@ where rdID=@rdID";
             return rows;
         }
         #endregion
-
+        #region 扩展操作
+        public static Reader GetObjectByID(int rdID) {
+            return null;
+        }
+        #endregion
     }
 }
