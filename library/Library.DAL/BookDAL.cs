@@ -16,14 +16,13 @@ namespace Library.DAL
         /// 添加书籍
         /// </summary>
         /// <param name="book_record"></param>
-        /// <returns></returns>
+        /// <returns>返回当前书籍ID</returns>
         public static int Add(Book book_record)
         {
             int rows = 0;
 
             #region SQL 语句准备
             string sql = @"insert into TB_Book(
-bkId,
 bkCode,
 bkName,
 bkAuthor,
@@ -39,7 +38,6 @@ bkBrief,
 bkCover,
 bkStatus
 ) values(
-@bkId,
 @bkCode,
 @bkName,
 @bkAuthor,
@@ -56,7 +54,7 @@ bkStatus
 @bkStatus
 )";
             SqlParameter[] parameters = { 
-                                            new SqlParameter("@bkId",book_record.bkId),
+                                            //new SqlParameter("@bkId",book_record.bkId),
                                             new SqlParameter("@bkCode",book_record.bkCode),
                                             new SqlParameter("@bkName",book_record.bkName),
                                             new SqlParameter("@bkAuthor",book_record.bkAuthor),
@@ -72,6 +70,35 @@ bkStatus
                                             new SqlParameter("@bkCover",book_record.bkCover),
                                             new SqlParameter("@bkStatus",book_record.bkStatus),
                                         };
+            
+            string sqlGetId = @"select bkId from TB_Book where
+bkCode=@bkCode and
+bkName=@bkName and
+bkAuthor=@bkAuthor and
+bkPress=@bkPress and
+bkDatePress=@bkDatePress and
+bkISBN=@bkISBN and
+bkCatalog=@bkCatalog and
+bkLanguage=@bkLanguage and
+bkPages=@bkPages and
+bkPrice=@bkPrice and
+bkDateIn=@bkDateIn and
+bkStatus=@bkStatus
+";
+            SqlParameter[] parameters1= { 
+                                            new SqlParameter("@bkCode",book_record.bkCode),
+                                            new SqlParameter("@bkName",book_record.bkName),
+                                            new SqlParameter("@bkAuthor",book_record.bkAuthor),
+                                            new SqlParameter("@bkPress",book_record.bkPress),
+                                            new SqlParameter("@bkDatePress",book_record.bkDatePress),
+                                            new SqlParameter("@bkISBN",book_record.bkISBN),
+                                            new SqlParameter("@bkCatalog",book_record.bkCatalog),
+                                            new SqlParameter("@bkLanguage",book_record.bkLanguage),
+                                            new SqlParameter("@bkPages",book_record.bkPages),
+                                            new SqlParameter("@bkPrice",book_record.bkPrice),
+                                            new SqlParameter("@bkDateIn",book_record.bkDateIn),
+                                            new SqlParameter("@bkStatus",book_record.bkStatus),
+                                        };
             #endregion
 
             try
@@ -83,6 +110,17 @@ bkStatus
                 throw new Exception(e.Message);
             }
 
+            if(rows>0){
+                try
+                {
+                    rows = (int)SqlHelper.ExecuteScalar(sqlGetId, parameters1);
+                }
+                catch (SqlException e)
+                {
+                    throw new Exception(e.Message);
+                }
+            }
+            
             return rows;
         }
         /// <summary>

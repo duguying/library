@@ -11,7 +11,7 @@ namespace Library.Model
         public Borrow() { }
 
         #region Borrow表
-        public int borrowId { get; set; }//借书事务id
+        public decimal borrowId { get; set; }//借书事务id
         public int rdId { get; set; }//读者ID
         public int bkId { get; set; }//书籍ID
         public int ldContinueTimes { get; set; }//续借次数

@@ -35,15 +35,12 @@ namespace Library.Test
             ReaderTypeDAL.Delete(rdt1);
 
             Console.WriteLine("DAL.ReaderType:测试Add()...");
-            ReaderTypeDAL.Add(rdt1);
+            rdt1.rdType=ReaderTypeDAL.Add(rdt1);
 
             string old_rdTypeName=rdt1.rdTypeName;
             rdt1.rdTypeName="管理员";
-            Console.WriteLine("DAL.ReaderType:测试Update()...rdType由" + old_rdTypeName + "改为" + rdt1.rdTypeName);
+            Console.WriteLine("DAL.ReaderType:测试Update()...rdType由" + old_rdTypeName + "改为" + rdt1.rdTypeName + "\n");
             ReaderTypeDAL.Update(rdt1);
-
-            ReaderTypeDAL.Delete(rdt1);
-            Console.WriteLine("数据已清理\n");
             #endregion
 
             #region DAL.Reader测试
@@ -67,15 +64,12 @@ namespace Library.Test
             ReaderDAL.Delete(rd1);
 
             Console.WriteLine("DAL.Reader:测试Add()...");
-            ReaderDAL.Add(rd1);
+            rd1.rdID=ReaderDAL.Add(rd1);
 
             string old_rdPassword = rd1.rdPassword;
             rd1.rdPassword = "密码";
-            Console.WriteLine("DAL.Reader:测试Update()...rdPassword由" + old_rdPassword + "改为" + rd1.rdPassword);
+            Console.WriteLine("DAL.Reader:测试Update()...rdPassword由" + old_rdPassword + "改为" + rd1.rdPassword + "\n");
             ReaderDAL.Update(rd1);
-
-            ReaderDAL.Delete(rd1);
-            Console.WriteLine("数据已清理\n");
             #endregion
 
             #region DAL.Borrow测试
@@ -97,15 +91,12 @@ namespace Library.Test
             BorrowDAL.Delete(br1);
 
             Console.WriteLine("DAL.Borrow:测试Add()...");
-            BorrowDAL.Add(br1);
+            br1.borrowId = (decimal)BorrowDAL.Add(br1);
 
             float old_ldPunishMoney = br1.ldPunishMoney;
             br1.ldPunishMoney = 2.4f;
-            Console.WriteLine("DAL.Borrow:测试Update()...ldPunishMoney由" + old_ldPunishMoney + "改为" + br1.ldPunishMoney);
+            Console.WriteLine("DAL.Borrow:测试Update()...ldPunishMoney由" + old_ldPunishMoney + "改为" + br1.ldPunishMoney + "\n");
             BorrowDAL.Update(br1);
-
-            BorrowDAL.Delete(br1);
-            Console.WriteLine("数据已清理\n");
             #endregion
 
             #region DAL.Book测试
@@ -131,15 +122,12 @@ namespace Library.Test
             BookDAL.Delete(bk1);
 
             Console.WriteLine("DAL.Book:测试Add()...");
-            BookDAL.Add(bk1);
+            bk1.bkId=BookDAL.Add(bk1);
 
             string old_bkName = bk1.bkName;
             bk1.bkName = "Go语言云动力";
-            Console.WriteLine("DAL.Book:测试Update()...bkName由" + old_bkName + "改为" + bk1.bkName);
+            Console.WriteLine("DAL.Book:测试Update()...bkName由" + old_bkName + "改为" + bk1.bkName + "\n");
             BookDAL.Update(bk1);
-
-            BookDAL.Delete(bk1);
-            Console.WriteLine("数据已清理\n");
             #endregion
 
             #region DAL.Admin测试
@@ -155,15 +143,25 @@ namespace Library.Test
             AdminDAL.Delete(ad1);
 
             Console.WriteLine("DAL.Admin:测试Add()...");
-            AdminDAL.Add(ad1);
+            ad1.adminId=AdminDAL.Add(ad1);
 
             string old_adminPassword = ad1.adminPassword;
             ad1.adminPassword = "guanliyuanyonghu@mi~ma";
-            Console.WriteLine("DAL.Admin:测试Update()...bkName由" + old_adminPassword + "改为" + ad1.adminPassword);
+            Console.WriteLine("DAL.Admin:测试Update()...bkName由" + old_adminPassword + "改为" + ad1.adminPassword+"\n");
             AdminDAL.Update(ad1);
+            #endregion
 
+            #region 测试数据清理
+            ReaderTypeDAL.Delete(rdt1);
+            Console.WriteLine("ReaderType:数据已清理");
+            ReaderDAL.Delete(rd1);
+            Console.WriteLine("Reader:数据已清理");
+            BorrowDAL.Delete(br1);
+            Console.WriteLine("Borrow:数据已清理");
+            BookDAL.Delete(bk1);
+            Console.WriteLine("Book:数据已清理");
             AdminDAL.Delete(ad1);
-            Console.WriteLine("数据已清理\n");
+            Console.WriteLine("Admin:数据已清理\n");
             #endregion
             
         }

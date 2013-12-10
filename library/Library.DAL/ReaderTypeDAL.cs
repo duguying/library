@@ -17,26 +17,35 @@ namespace Library.DAL
         /// </summary>
         /// <param name="reader_type_record"></param>
         /// <returns></returns>
-        public static int Add(ReaderType reader_type_record)
+        public static short Add(ReaderType reader_type_record)
         {
-            int rows = 0;
+            short rows = 0;
 
             #region SQL 语句准备
             string sql = @"insert into TB_ReaderType(
-rdType,
 rdTypeName,
 maxBorrowNum,
 maxBorrowDay,
 maxContinueTimes
 )values(
-@rdType,
 @rdTypeName,
 @maxBorrowNum,
 @maxBorrowDay,
 @maxContinueTimes
 )";
             SqlParameter[] parameters = { 
-                                            new SqlParameter("@rdType",reader_type_record.rdType),
+                                            new SqlParameter("@rdTypeName",reader_type_record.rdTypeName),
+                                            new SqlParameter("@maxBorrowNum",reader_type_record.maxBorrowNum),
+                                            new SqlParameter("@maxBorrowDay",reader_type_record.maxBorrowDay),
+                                            new SqlParameter("@maxContinueTimes",reader_type_record.maxContinueTimes),
+                                        };
+            string sqlGetId = @"select rdType from TB_ReaderType where
+rdTypeName=@rdTypeName and
+maxBorrowNum=@maxBorrowNum and
+maxBorrowDay=@maxBorrowDay and
+maxContinueTimes=@maxContinueTimes
+";
+            SqlParameter[] parameters1 = { 
                                             new SqlParameter("@rdTypeName",reader_type_record.rdTypeName),
                                             new SqlParameter("@maxBorrowNum",reader_type_record.maxBorrowNum),
                                             new SqlParameter("@maxBorrowDay",reader_type_record.maxBorrowDay),
@@ -45,9 +54,21 @@ maxContinueTimes
             #endregion
 
             try {
-                rows = SqlHelper.ExecuteNonQuery(sql, parameters);
+                rows = (short)SqlHelper.ExecuteNonQuery(sql, parameters);
             }catch(SqlException e){
                 throw new Exception(e.Message);
+            }
+
+            if (rows > 0)
+            {
+                try
+                {
+                    rows = (short)SqlHelper.ExecuteScalar(sqlGetId, parameters1);
+                }
+                catch (SqlException e)
+                {
+                    throw new Exception(e.Message);
+                }
             }
 
             return rows;

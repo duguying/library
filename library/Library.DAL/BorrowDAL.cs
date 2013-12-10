@@ -16,14 +16,13 @@ namespace Library.DAL
         /// 添加借书记录
         /// </summary>
         /// <param name="borrow_record"></param>
-        /// <returns></returns>
-        public static int Add(Borrow borrow_record)
+        /// <returns>long: 当前事务编号</returns>
+        public static decimal Add(Borrow borrow_record)
         {
-            int rows = 0;
+            decimal rows = 0;
 
             #region SQL 语句准备
             string sql = @"insert into TB_Borrow(
-borrowId,
 rdId,
 bkId,
 ldContinueTimes,
@@ -37,7 +36,6 @@ IsHasReturn,
 OperatorLendId,
 OperatorRetId
 ) values(
-@borrowId,
 @rdId,
 @bkId,
 @ldContinueTimes,
@@ -52,7 +50,37 @@ OperatorRetId
 @OperatorRetId
 )";
             SqlParameter[] parameters = { 
-                                            new SqlParameter("@borrowId",borrow_record.borrowId),
+                                            //new SqlParameter("@borrowId",borrow_record.borrowId),
+                                            new SqlParameter("@rdID",borrow_record.rdId),
+                                            new SqlParameter("@bkId",borrow_record.bkId),
+                                            new SqlParameter("@ldContinueTimes",borrow_record.ldContinueTimes),
+                                            new SqlParameter("@ldDateOut",borrow_record.ldDateOut),
+                                            new SqlParameter("@ldDateRetPlan",borrow_record.ldDateRetPlan),
+                                            new SqlParameter("@ldDateRetAct",borrow_record.ldDateRetAct),
+                                            new SqlParameter("@ldOverDay",borrow_record.ldOverDay),
+                                            new SqlParameter("@ldOverMoney",borrow_record.ldOverMoney),
+                                            new SqlParameter("@ldPunishMoney",borrow_record.ldPunishMoney),
+                                            new SqlParameter("@IsHasReturn",borrow_record.IsHasReturn),
+                                            new SqlParameter("@OperatorLendId",borrow_record.OperatorLendId),
+                                            new SqlParameter("@OperatorRetId",borrow_record.OperatorRetId),
+                                        };
+
+            string sqlGetId = @"select borrowId from TB_Borrow where
+rdId=@rdId and
+bkId=@bkId and
+ldContinueTimes=@ldContinueTimes and
+ldDateOut=@ldDateOut and
+ldDateRetPlan=@ldDateRetPlan and
+ldDateRetAct=@ldDateRetAct and
+ldOverDay=@ldOverDay and
+ldOverMoney=@ldOverMoney and
+ldPunishMoney=@ldPunishMoney and
+IsHasReturn=@IsHasReturn and
+OperatorLendId=@OperatorLendId and
+OperatorRetId=@OperatorRetId
+";
+            SqlParameter[] parameters1 = { 
+                                            //new SqlParameter("@borrowId",borrow_record.borrowId),
                                             new SqlParameter("@rdID",borrow_record.rdId),
                                             new SqlParameter("@bkId",borrow_record.bkId),
                                             new SqlParameter("@ldContinueTimes",borrow_record.ldContinueTimes),
@@ -76,7 +104,17 @@ OperatorRetId
             {
                 throw new Exception(e.Message);
             }
-
+            if (rows>0) {
+                try
+                {
+                    rows = (decimal)SqlHelper.ExecuteScalar(sqlGetId, parameters1);
+                }
+                catch (SqlException e)
+                {
+                    throw new Exception(e.Message);
+                }
+            }
+            
             return rows;
         }
         /// <summary>

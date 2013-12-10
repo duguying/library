@@ -16,27 +16,39 @@ namespace Library.DAL
         /// 添加管理员
         /// </summary>
         /// <param name="admin_record"></param>
-        /// <returns></returns>
+        /// <returns>返回当前插入的记录的ID</returns>
         public static int Add(Admin admin_record)
         {
             int rows = 0;
 
             #region SQL 语句准备
             string sql = @"insert into TB_Admin(
-adminId,
 adminUsername,
 adminPassword,
 adminEmail,
 adminLastLoginDate
 )values(
-@adminId,
 @adminUsername,
 @adminPassword,
 @adminEmail,
 @adminLastLoginDate
 )";
             SqlParameter[] parameters = { 
-                                            new SqlParameter("@adminId",admin_record.adminId),
+                                            new SqlParameter("@adminUsername",admin_record.adminUsername),
+                                            new SqlParameter("@adminPassword",admin_record.adminPassword),
+                                            new SqlParameter("@adminEmail",admin_record.adminEmail),
+                                            new SqlParameter("@adminLastLoginDate",admin_record.adminLastLoginDate),
+                                        };
+            
+            
+            string sqlGetId = @"select adminId from TB_Admin where
+adminUsername=@adminUsername and
+adminPassword=@adminPassword and
+adminEmail=@adminEmail and
+adminLastLoginDate=@adminLastLoginDate
+";
+            //获取当前插入项的ID
+            SqlParameter[] parameters1 = { 
                                             new SqlParameter("@adminUsername",admin_record.adminUsername),
                                             new SqlParameter("@adminPassword",admin_record.adminPassword),
                                             new SqlParameter("@adminEmail",admin_record.adminEmail),
@@ -53,6 +65,18 @@ adminLastLoginDate
                 throw new Exception(e.Message);
             }
 
+            if (rows > 0)
+            {
+                try
+                {
+                    rows = (int)SqlHelper.ExecuteScalar(sqlGetId, parameters1);
+                }
+                catch (SqlException e)
+                {
+                    throw new Exception(e.Message);
+                }
+            }
+            
             return rows;
         }
         /// <summary>
@@ -121,5 +145,11 @@ where adminId=@adminId
         }
         #endregion
 
+        #region 扩展操作
+        Admin getAdminByUsername(string username) {
+            object r=SqlHelper.ExecuteScalar("select * from TB_Admin where adminUsername='lijun'");
+            return null;
+        }
+        #endregion
     }
 }

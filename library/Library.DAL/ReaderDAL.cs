@@ -23,7 +23,6 @@ namespace Library.DAL
 
             #region SQL 语句准备
             string sql = @"insert into TB_Reader(
-rdID,
 rdUsername,
 rdPassword,
 rdName,
@@ -37,7 +36,6 @@ rdPhoto,
 rdStatus,
 rdHaveBorrowNum
 ) values(
-@rdID,
 @rdUsername,
 @rdPassword,
 @rdName,
@@ -52,7 +50,7 @@ rdHaveBorrowNum
 @rdHaveBorrowNum
 )";
             SqlParameter[] parameters = { 
-                                            new SqlParameter("@rdID",reader_record.rdID),
+                                            //new SqlParameter("@rdID",reader_record.rdID),
                                             new SqlParameter("@rdUsername",reader_record.rdUsername),
                                             new SqlParameter("@rdPassword",reader_record.rdPassword),
                                             new SqlParameter("@rdName",reader_record.rdName),
@@ -66,6 +64,34 @@ rdHaveBorrowNum
                                             new SqlParameter("@rdStatus",reader_record.rdStatus),
                                             new SqlParameter("@rdHaveBorrowNum",reader_record.rdHaveBorrowNum),
                                         };
+            string sqlGetId = @"select rdID from TB_Reader where
+rdUsername=@rdUsername and
+rdPassword=@rdPassword and
+rdName=@rdName and
+rdSex=@rdSex and
+rdType=@rdType and
+rdDept=@rdDept and
+rdPhone=@rdPhone and
+rdEmail=@rdEmail and
+rdDateReg=@rdDateReg and
+rdStatus=@rdStatus and
+rdHaveBorrowNum=@rdHaveBorrowNum
+";
+            SqlParameter[] parameters1 = { 
+                                            //new SqlParameter("@rdID",reader_record.rdID),
+                                            new SqlParameter("@rdUsername",reader_record.rdUsername),
+                                            new SqlParameter("@rdPassword",reader_record.rdPassword),
+                                            new SqlParameter("@rdName",reader_record.rdName),
+                                            new SqlParameter("@rdSex",reader_record.rdSex),
+                                            new SqlParameter("@rdType",reader_record.rdType),
+                                            new SqlParameter("@rdDept",reader_record.rdDept),
+                                            new SqlParameter("@rdPhone",reader_record.rdPhone),
+                                            new SqlParameter("@rdEmail",reader_record.rdEmail),
+                                            new SqlParameter("@rdDateReg",reader_record.rdDateReg),
+                                            //new SqlParameter("@rdPhoto",reader_record.rdPhoto),
+                                            new SqlParameter("@rdStatus",reader_record.rdStatus),
+                                            new SqlParameter("@rdHaveBorrowNum",reader_record.rdHaveBorrowNum),
+                                        };
             #endregion
 
             try
@@ -75,6 +101,18 @@ rdHaveBorrowNum
             catch (SqlException e)
             {
                 throw new Exception(e.Message);
+            }
+
+            if (rows > 0)
+            {
+                try
+                {
+                    rows = (int)SqlHelper.ExecuteScalar(sqlGetId, parameters1);
+                }
+                catch (SqlException e)
+                {
+                    throw new Exception(e.Message);
+                }
             }
 
             return rows;
