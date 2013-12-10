@@ -11,8 +11,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-//using Library;
-//using Library.DAL;
+using Library.Model;
+using Library.DAL;
+using Library.BLL;
 
 namespace Library
 {
@@ -38,16 +39,17 @@ namespace Library
         {
             string username=this.tb_username.Text;
             string password = this.tb_password.Password;
-            //bool rst = Library.DAL.DAL.login(username, password);
-            //if (rst)
-            //{
-            //    MainForm win = new MainForm(this);
-            //    win.Show();
-            //    this.Hide();
-            //}
-            //else {
-            //    MessageBox.Show("登录失败！");
-            //}
+            bool rst = AdminAction.AdminLogin(username, password);
+            if (rst)
+            {
+                MainForm win = new MainForm(this);
+                win.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("登录失败！");
+            }
             
         }
 		

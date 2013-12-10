@@ -24,7 +24,7 @@
     				</LinearGradientBrush>
     			</TextBox.BorderBrush>
     		</TextBox>
-            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="79,46,0,0" Name="tb_password" VerticalAlignment="Top" Width="161" />
+            <PasswordBox Height="23" HorizontalAlignment="Left" Margin="79,46,0,0" Name="tb_password" VerticalAlignment="Top" Width="183" />
             <Button Content="登录" Margin="47,0,0,18" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="80" Click="Button_Click" />
     		<Button x:Name="button" Content="退出" Margin="160,0,86,18" VerticalAlignment="Bottom" Click="ExitClick"/>
             

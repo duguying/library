@@ -40,8 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL.cs" />
+    <Compile Include="AdminAction.cs" />
+    <Compile Include="BookAction.cs" />
+    <Compile Include="BorrowAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReaderAction.cs" />
+    <Compile Include="ReaderTypeAction.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library.DAL\Library.DAL.csproj">
