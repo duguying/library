@@ -55,7 +55,7 @@ namespace Library.Test
             rd1.rdDept = "计科院";
             rd1.rdPhone = "18900000000";
             rd1.rdEmail = "rex@duguying.net";
-            rd1.rdDateReg = DateTime.Now.ToString();
+            rd1.rdDateReg = DateTime.Now;
             rd1.rdPhoto = Encoding.Default.GetBytes("test");
             rd1.rdStatus = "正常";
             rd1.rdHaveBorrowNum = 1;
@@ -78,9 +78,9 @@ namespace Library.Test
             br1.borrowId = 1;
             br1.bkId = 1;
             br1.ldContinueTimes = 0;
-            br1.ldDateOut = DateTime.Now.ToString();
-            br1.ldDateRetPlan = DateTime.Now.ToString();
-            br1.ldDateRetAct = DateTime.Now.ToString();
+            br1.ldDateOut = DateTime.Now;
+            br1.ldDateRetPlan = DateTime.Now;
+            br1.ldDateRetAct = DateTime.Now;
             br1.ldOverDay = 12;
             br1.ldOverMoney = 1.2f;
             br1.IsHasReturn = false;
@@ -107,13 +107,13 @@ namespace Library.Test
             bk1.bkName = "测试书籍";
             bk1.bkAuthor = "作者";
             bk1.bkPress = "出版社";
-            bk1.bkDatePress = DateTime.Now.ToString();
+            bk1.bkDatePress = DateTime.Now;
             bk1.bkISBN = "92520111234";
             bk1.bkCatalog = "计算机科学";
             bk1.bkLanguage = 0;
             bk1.bkPages = 300;
             bk1.bkPrice = 30.5f;
-            bk1.bkDateIn = DateTime.Now.ToString();
+            bk1.bkDateIn = DateTime.Now;
             bk1.bkBrief = "Go语言基础教程";
             bk1.bkCover = Encoding.Default.GetBytes("test");
             bk1.bkStatus = "在馆";
@@ -134,10 +134,10 @@ namespace Library.Test
             Console.WriteLine("Model.Admin:测试创建数据单元...");
             Admin ad1 = new Admin();
             ad1.adminId = 1;
-            ad1.adminUsername = "1234";
-            ad1.adminPassword = "测试书籍";
-            ad1.adminEmail = "作者";
-            ad1.adminLastLoginDate = DateTime.Now.ToString();
+            ad1.adminUsername = "用户";
+            ad1.adminPassword = "密码";
+            ad1.adminEmail = "rex@lijun.cn";
+            ad1.adminLastLoginDate = DateTime.Now;
 
             Console.WriteLine("DAL.Admin:测试Delete()...");
             AdminDAL.Delete(ad1);
@@ -163,7 +163,10 @@ namespace Library.Test
             AdminDAL.Delete(ad1);
             Console.WriteLine("Admin:数据已清理\n");
             #endregion
-            
+
+            #region DAL.Admin扩展操作测试
+            AdminDAL.getAdminByUsername("lijun");
+            #endregion
         }
     }
 }

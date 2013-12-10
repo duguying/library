@@ -40,7 +40,6 @@ adminLastLoginDate
                                             new SqlParameter("@adminLastLoginDate",admin_record.adminLastLoginDate),
                                         };
             
-            
             string sqlGetId = @"select adminId from TB_Admin where
 adminUsername=@adminUsername and
 adminPassword=@adminPassword and
@@ -146,10 +145,26 @@ where adminId=@adminId
         #endregion
 
         #region 扩展操作
-        Admin getAdminByUsername(string username) {
-            object r=SqlHelper.ExecuteScalar("select * from TB_Admin where adminUsername='lijun'");
-            return null;
+        /// <summary>
+        /// 通过Username获取管理员用户信息
+        /// </summary>
+        /// <param name="username"></param>
+        /// <returns></returns>
+        public static Admin getAdminByUsername(string username) {
+            string sql = @"select * from TB_Admin where adminUsername=@adminUsername";
+            SqlParameter[] parameters = { 
+                                            new SqlParameter("@adminUsername",username),
+                                        };
+            DataTable tb = SqlHelper.GetDataTable(sql, parameters, "TB_Admin");
+            Admin adr = new Admin();
+            adr.adminId=(int)tb.Rows[0].ItemArray[0];
+            adr.adminUsername = (string)tb.Rows[0].ItemArray[1].ToString();
+            adr.adminPassword = (string)tb.Rows[0].ItemArray[2].ToString();
+            adr.adminEmail = (string)tb.Rows[0].ItemArray[3].ToString();
+            adr.adminLastLoginDate = (DateTime)tb.Rows[0].ItemArray[4];
+            return adr;
         }
+
         #endregion
     }
 }
