@@ -147,7 +147,7 @@ namespace Library.Test
 
             string old_adminPassword = ad1.adminPassword;
             ad1.adminPassword = "guanliyuanyonghu@mi~ma";
-            Console.WriteLine("DAL.Admin:测试Update()...bkName由" + old_adminPassword + "改为" + ad1.adminPassword+"\n");
+            Console.WriteLine("DAL.Admin:测试Update()...adminPassword由" + old_adminPassword + "改为" + ad1.adminPassword + "\n");
             AdminDAL.Update(ad1);
             #endregion
 

@@ -8,7 +8,7 @@
 		<ImageBrush ImageSource="login_box.gif"/>
 	</Window.Foreground>
 	
-    <Grid>
+    <Grid KeyDown="Grid_KeyDown">
     	<Grid.Background>
     		<ImageBrush ImageSource="login_box.gif" Stretch="Uniform"></ImageBrush>  	
 		</Grid.Background>

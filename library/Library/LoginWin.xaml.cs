@@ -52,6 +52,18 @@ namespace Library
             }
             
         }
+
+        /// <summary>
+        /// 监控回车键
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Grid_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key==Key.Return) {
+                Button_Click(null,null);
+            }
+        }
 		
     }
 }

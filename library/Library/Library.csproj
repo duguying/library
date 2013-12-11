@@ -92,6 +92,7 @@
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tools.cs" />
     <Compile Include="UpdateBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
