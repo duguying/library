@@ -10,7 +10,7 @@ namespace Library.Model
     {
         public ReaderType() { }
 
-        private string _rdTypeName;
+        private string _rdTypeName = "";
 
         #region 读者类型表
         public short rdType { get; set; }

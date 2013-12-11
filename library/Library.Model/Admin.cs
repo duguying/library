@@ -11,9 +11,9 @@ namespace Library.Model
         public Admin() { }
 
         //private int _adminId;
-        private string _adminUsername;
-        private string _adminPassword;
-        private string _adminEmail;
+        private string _adminUsername = "";
+        private string _adminPassword = "";
+        private string _adminEmail = "";
 
         #region 管理员表
         public int adminId { get; set; }//管理员ID

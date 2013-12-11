@@ -10,6 +10,11 @@ namespace Library
 {
     public class Tools
     {
+        /// <summary>
+        /// 从PictureBox获取图片转为byte[]
+        /// </summary>
+        /// <param name="pb"></param>
+        /// <returns></returns>
         public static byte[] GetBytesByImage(PictureBox pb)
         {
             byte[] photo_byte = null;
@@ -29,7 +34,11 @@ namespace Library
 
             return photo_byte;
         }
-
+        /// <summary>
+        /// 从路径获取图片转为byte[]
+        /// </summary>
+        /// <param name="strFile"></param>
+        /// <returns></returns>
         public static byte[] GetBytesByImagePath(string strFile)
         {
             byte[] photo_byte = null;
@@ -43,7 +52,11 @@ namespace Library
 
             return photo_byte;
         }
-
+        /// <summary>
+        /// 将byte[]转为图片
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
         public static Image GetImageByBytes(byte[] bytes)
         {
             Image photo = null;
@@ -54,6 +67,11 @@ namespace Library
             }
 
             return photo;
+        }
+        public static bool CheckBookCodeExist(string code) {
+            bool rst = false;
+
+            return rst;
         }
     }
 }

@@ -34,6 +34,7 @@
             this.bookMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.图书查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.readerMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.cardRegistorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.图书查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -80,7 +80,7 @@
             this.helpMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(832, 25);
+            this.menuStrip.Size = new System.Drawing.Size(1189, 25);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -114,6 +114,13 @@
             this.openToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.openToolStripMenuItem.Text = "图书信息维护(&M)";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.UpdateBook);
+            // 
+            // 图书查询ToolStripMenuItem
+            // 
+            this.图书查询ToolStripMenuItem.Name = "图书查询ToolStripMenuItem";
+            this.图书查询ToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.图书查询ToolStripMenuItem.Text = "图书查询";
+            this.图书查询ToolStripMenuItem.Click += new System.EventHandler(this.SearchBook);
             // 
             // readerMenu
             // 
@@ -280,7 +287,7 @@
             this.helpToolStripButton});
             this.toolStrip.Location = new System.Drawing.Point(0, 25);
             this.toolStrip.Name = "toolStrip";
-            this.toolStrip.Size = new System.Drawing.Size(832, 25);
+            this.toolStrip.Size = new System.Drawing.Size(1189, 25);
             this.toolStrip.TabIndex = 1;
             this.toolStrip.Text = "ToolStrip";
             // 
@@ -352,9 +359,9 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 478);
+            this.statusStrip.Location = new System.Drawing.Point(0, 558);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(832, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1189, 22);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
             // 
@@ -364,18 +371,11 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(32, 17);
             this.toolStripStatusLabel.Text = "状态";
             // 
-            // 图书查询ToolStripMenuItem
-            // 
-            this.图书查询ToolStripMenuItem.Name = "图书查询ToolStripMenuItem";
-            this.图书查询ToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.图书查询ToolStripMenuItem.Text = "图书查询";
-            this.图书查询ToolStripMenuItem.Click += new System.EventHandler(this.SearchBook);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 500);
+            this.ClientSize = new System.Drawing.Size(1189, 580);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.menuStrip);

@@ -10,14 +10,14 @@ namespace Library.Model
     {
         public Reader() { }
 
-        private string _rdUsername;
-        private string _rdPassword;
-        private string _rdName;
-        private string _rdSex;
-        private string _rdDept;
-        private string _rdPhone;
-        private string _rdEmail;
-        private string _rdStatus;
+        private string _rdUsername = "";
+        private string _rdPassword = "";
+        private string _rdName = "";
+        private string _rdSex = "";
+        private string _rdDept = "";
+        private string _rdPhone = "";
+        private string _rdEmail = "";
+        private string _rdStatus = "";
 
 
         #region 读者表

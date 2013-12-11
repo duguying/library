@@ -46,22 +46,47 @@ namespace Library
                 picbyte = Tools.GetBytesByImage(pictureBox1);
             };
 
+            if (""==textBox9.Text) {
+                textBox9.Text = "0";
+            }
+
             Book book = new Book();
             book.bkAuthor=textBox2.Text;
             book.bkBrief=textBox6.Text;
             book.bkCatalog=textBox7.Text;
             book.bkCode=textBox8.Text;
             book.bkCover = picbyte;
-            book.bkDateIn=DateTime.Now;
+            book.bkDateIn = DateTime.Now;
+            label10.Text = book.bkDateIn.ToString();
             book.bkDatePress=dateTimePicker1.Value;
             book.bkISBN=textBox5.Text;
             book.bkLanguage = lang;
-            book.bkName=textBox1.Text;
-            book.bkPages=int.Parse(textBox9.Text);
+            if ("" == textBox1.Text)
+            {
+                MessageBox.Show("书名不能为空！");
+                return;
+            }
+            else
+            {
+                book.bkName = textBox1.Text;
+            }
+            try{
+                book.bkPages=int.Parse(textBox9.Text);
+            }catch(Exception pgerr){
+                MessageBox.Show("页码错误！\n" + pgerr.Message);
+                return;
+            }
             book.bkPress=textBox3.Text;
-            book.bkPrice=float.Parse(textBox4.Text);
+            try
+            {
+                book.bkPrice = float.Parse(textBox4.Text);
+            }catch(Exception prieer){
+                MessageBox.Show("价格错误！\n" + prieer.Message);
+                return;
+            }
             book.bkStatus="在馆";
 
+            
             try {
                 if (BookDAL.Add(book) > 0) {
                     MessageBox.Show("添加成功！");
@@ -80,6 +105,11 @@ namespace Library
                 pictureBox1.ImageLocation= cc.FileName;
                 this.picturePath = cc.FileName;
             }
+        }
+
+        private void NewBookForm_Load(object sender, EventArgs e)
+        {
+            label10.Text = DateTime.Now.ToString();
         }
     }
 }

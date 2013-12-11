@@ -80,17 +80,17 @@
     <Compile Include="AdduserForm.Designer.cs">
       <DependentUpon>AdduserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="BookListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BookListForm.Designer.cs">
-      <DependentUpon>BookListForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SearchForm.Designer.cs">
       <DependentUpon>SearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchUserForm.Designer.cs">
+      <DependentUpon>SearchUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools.cs" />
     <Compile Include="UpdateBookForm.cs">
@@ -98,12 +98,6 @@
     </Compile>
     <Compile Include="UpdateBookForm.Designer.cs">
       <DependentUpon>UpdateBookForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserListForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserListForm.Designer.cs">
-      <DependentUpon>UserListForm.cs</DependentUpon>
     </Compile>
     <Page Include="LoginWin.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -147,9 +141,6 @@
     <EmbeddedResource Include="AdduserForm.resx">
       <DependentUpon>AdduserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BookListForm.resx">
-      <DependentUpon>BookListForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,11 +154,11 @@
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SearchUserForm.resx">
+      <DependentUpon>SearchUserForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UpdateBookForm.resx">
       <DependentUpon>UpdateBookForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserListForm.resx">
-      <DependentUpon>UserListForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

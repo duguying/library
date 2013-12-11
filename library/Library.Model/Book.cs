@@ -10,14 +10,14 @@ namespace Library.Model
     {
         public Book() { }
 
-        private string _bkCode;
-        private string _bkName;
-        private string _bkAuthor;
-        private string _bkPress;
-        private string _bkISBN;
-        private string _bkCatalog;
-        private string _bkBrief;
-        private string _bkStatus;
+        private string _bkCode="";
+        private string _bkName = "";
+        private string _bkAuthor = "";
+        private string _bkPress = "";
+        private string _bkISBN = "";
+        private string _bkCatalog = "";
+        private string _bkBrief = "";
+        private string _bkStatus = "";
 
         #region Book表
         public int bkId { get; set; }//书籍ID

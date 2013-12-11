@@ -207,6 +207,50 @@ where bkId=@bkId
 
             return rows;
         }
+        /// <summary>
+        /// 书籍查询
+        /// </summary>
+        /// <param name="book_information"></param>
+        /// <returns></returns>
+        public static DataTable FindByKeyword(Book book_information) {
+
+            #region SQL 语句准备
+            string sql = @"
+select 
+bkId as 书籍编号,
+bkCode as 馆藏条码,
+bkName as 书籍名称,
+bkAuthor as 作者,
+bkPress as 出版社,
+bkDatePress as 出版时间,
+bkISBN as ISBN条码,
+bkCatalog as 分类,
+bkLanguage as 语种,
+bkPages as 页数,
+bkPrice as 价格,
+bkDateIn as 收录时间,
+bkBrief as 简介,
+bkStatus as 书籍状态
+from dbo.vague_search_book_by_code(
+    @bkCode
+)
+";
+            SqlParameter[] parameters = { 
+                                            new SqlParameter("@bkCode",book_information.bkCode),
+                                        };
+            #endregion
+            DataTable tmpTable;
+            try
+            {
+                tmpTable = SqlHelper.GetDataTable(sql, parameters, "tmpTable");
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            return tmpTable;
+        }
+
         #endregion
 
     }
