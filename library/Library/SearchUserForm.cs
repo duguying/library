@@ -59,6 +59,9 @@ namespace Library
         /// <param name="e"></param>
         private void FilterBySex(object sender, EventArgs e)
         {
+            if (tmpTbl==null) {
+                return;
+            }
             tmpTbl.DefaultView.RowFilter = "性别='" + comboBox1.Text+"'";
             dataGridView1.DataSource = tmpTbl;
         }
@@ -85,12 +88,17 @@ namespace Library
         /// <param name="e"></param>
         private void TypeFilter(object sender, EventArgs e)
         {
+            if (tmpTbl == null)
+            {
+                return;
+            }
             if (comboBox2.Text == "--请选择类型--" || comboBox2.Text == "")
             {
                 MessageBox.Show("请选择类型");
                 return;
             }
             else {
+                
                 int rows = TypeTmpTable.Rows.Count;
                 bool exist_flag = false;
                 for (int i = 0; i < rows; i++)

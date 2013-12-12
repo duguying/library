@@ -22,7 +22,7 @@ namespace Library
         private void AddBook(object sender, EventArgs e)
         {
             //语言，0-中文，1-英文，2-日文，3-俄文，4-德文，5-法文
-            int lang=0;
+            short lang=0;
             switch (comboBox1.Text)
             {
                 case "中文":

@@ -381,18 +381,19 @@
             this.删除ToolStripMenuItem,
             this.删除书籍ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 70);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.删除ToolStripMenuItem.Text = "详细信息";
+            this.删除ToolStripMenuItem.Click += new System.EventHandler(this.BookDetail);
             // 
             // 删除书籍ToolStripMenuItem
             // 
             this.删除书籍ToolStripMenuItem.Name = "删除书籍ToolStripMenuItem";
-            this.删除书籍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.删除书籍ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.删除书籍ToolStripMenuItem.Text = "删除书籍";
             // 
             // SearchForm

@@ -250,7 +250,49 @@ from dbo.vague_search_book_by_code(
             }
             return tmpTable;
         }
+        /// <summary>
+        /// 通过ID查找书籍
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static DataTable GetBookById(int id) {
+            #region SQL 语句准备
+            string sql = @"
+select 
+bkId ,
+bkCode ,
+bkName ,
+bkAuthor ,
+bkPress ,
+bkDatePress ,
+bkISBN ,
+bkCatalog ,
+bkLanguage ,
+bkPages ,
+bkPrice ,
+bkDateIn ,
+bkBrief ,
+bkCover,
+bkStatus
+from TB_Book where bkId=@bkId
+";
+            SqlParameter[] parameters = { 
+                                            new SqlParameter("@bkId",id),
+                                        };
+            #endregion
 
+            DataTable tmpTable;
+            try
+            {
+                tmpTable = SqlHelper.GetDataTable(sql, parameters, "tmpTable");
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            //object o=tmpTable.Rows[0].ItemArray[10];
+            return tmpTable;
+        }
         #endregion
 
     }
