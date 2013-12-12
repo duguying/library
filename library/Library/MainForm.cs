@@ -180,6 +180,19 @@ namespace Library
             fsb.WindowState = FormWindowState.Maximized;
             fsb.Show();
         }
+        /// <summary>
+        /// 查找用户
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void findUser(object sender, EventArgs e)
+        {
+            SearchUserForm fu = new SearchUserForm();
+            fu.MdiParent = this;
+            fu.StartPosition = FormStartPosition.CenterScreen;
+            fu.WindowState = FormWindowState.Maximized;
+            fu.Show();
+        }
 
 
     }

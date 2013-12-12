@@ -144,6 +144,11 @@ where rdType=@rdType
         public static ReaderType GetObjectById(int rdType) {
             return null;
         }
+
+        public static DataTable GetAllReadertype() {
+            DataTable rstTbl=null;
+            return rstTbl;
+        }
         #endregion
 
     }

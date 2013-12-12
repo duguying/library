@@ -80,6 +80,24 @@
     <Compile Include="AdduserForm.Designer.cs">
       <DependentUpon>AdduserForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BookDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookDetailForm.Designer.cs">
+      <DependentUpon>BookDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BorrowForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowForm.Designer.cs">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReturnForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReturnForm.Designer.cs">
+      <DependentUpon>ReturnForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +116,12 @@
     </Compile>
     <Compile Include="UpdateBookForm.Designer.cs">
       <DependentUpon>UpdateBookForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserDetailForm.Designer.cs">
+      <DependentUpon>UserDetailForm.cs</DependentUpon>
     </Compile>
     <Page Include="LoginWin.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +165,12 @@
     <EmbeddedResource Include="AdduserForm.resx">
       <DependentUpon>AdduserForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BookDetailForm.resx">
+      <DependentUpon>BookDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowForm.resx">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +181,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReturnForm.resx">
+      <DependentUpon>ReturnForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateBookForm.resx">
       <DependentUpon>UpdateBookForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserDetailForm.resx">
+      <DependentUpon>UserDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

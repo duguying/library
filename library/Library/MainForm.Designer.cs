@@ -65,6 +65,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.查找用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -234,7 +235,8 @@
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem,
             this.密码修改ToolStripMenuItem,
-            this.添加用户ToolStripMenuItem});
+            this.添加用户ToolStripMenuItem,
+            this.查找用户ToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(83, 21);
             this.toolsMenu.Text = "用户管理(&T)";
@@ -242,21 +244,21 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.optionsToolStripMenuItem.Text = "权限管理";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.Power);
             // 
             // 密码修改ToolStripMenuItem
             // 
             this.密码修改ToolStripMenuItem.Name = "密码修改ToolStripMenuItem";
-            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.密码修改ToolStripMenuItem.Text = "密码修改";
             this.密码修改ToolStripMenuItem.Click += new System.EventHandler(this.ChangePSW);
             // 
             // 添加用户ToolStripMenuItem
             // 
             this.添加用户ToolStripMenuItem.Name = "添加用户ToolStripMenuItem";
-            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.添加用户ToolStripMenuItem.Text = "添加用户";
             this.添加用户ToolStripMenuItem.Click += new System.EventHandler(this.AddUser);
             // 
@@ -371,6 +373,13 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(32, 17);
             this.toolStripStatusLabel.Text = "状态";
             // 
+            // 查找用户ToolStripMenuItem
+            // 
+            this.查找用户ToolStripMenuItem.Name = "查找用户ToolStripMenuItem";
+            this.查找用户ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.查找用户ToolStripMenuItem.Text = "读者用户";
+            this.查找用户ToolStripMenuItem.Click += new System.EventHandler(this.findUser);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -433,6 +442,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 添加用户ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 图书查询ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 查找用户ToolStripMenuItem;
     }
 }
 
