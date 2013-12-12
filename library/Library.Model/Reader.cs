@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
+using System.Data;
+using Library.Model;
 
 namespace Library.Model
 {
@@ -35,5 +38,28 @@ namespace Library.Model
         public string rdStatus { get { return _rdStatus; } set { _rdStatus = value.Trim(); } }//证件状态
         public int rdHaveBorrowNum { get; set; }//已借书数量
         #endregion
+
+        /// <summary>
+        /// 将Rows转化为Reader
+        /// </summary>
+        /// <param name="row"></param>
+        /// <returns></returns>
+        public static Reader RowsToReader(DataRowCollection row) {
+            Reader rd = new Reader();
+            rd.rdID=(int)row[0].ItemArray[0];
+            rd.rdUsername=(string)row[0].ItemArray[1];
+            rd.rdPassword=(string)row[0].ItemArray[2];
+            rd.rdName=(string)row[0].ItemArray[3];
+            rd.rdSex=(string)row[0].ItemArray[4];
+            rd.rdType=(int)row[0].ItemArray[5];
+            rd.rdDept=(string)row[0].ItemArray[6];
+            rd.rdPhone=(string)row[0].ItemArray[7];
+            rd.rdEmail=(string)row[0].ItemArray[8];
+            rd.rdDateReg=(DateTime)row[0].ItemArray[9];
+            rd.rdPhoto=(byte[])row[0].ItemArray[10];
+            rd.rdStatus=(string)row[0].ItemArray[11];
+            rd.rdHaveBorrowNum = (int)row[0].ItemArray[1];
+            return rd;
+        }
     }
 }

@@ -146,7 +146,27 @@ where rdType=@rdType
         }
 
         public static DataTable GetAllReadertype() {
-            DataTable rstTbl=null;
+            #region SQL 语句准备
+            string sql = @"select 
+rdType as 读者类别ID,
+rdTypeName as 类别名,
+maxBorrowNum as 最大借书数目,
+maxBorrowDay as 最大借书天数,
+maxContinueTimes as 最大续借次数
+    from TB_ReaderType where 1=1
+";
+            #endregion
+
+            DataTable rstTbl;
+            try
+            {
+                rstTbl = SqlHelper.GetDataTable(sql, null, "tmpTable");
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+            
             return rstTbl;
         }
         #endregion
