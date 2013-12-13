@@ -13,6 +13,7 @@ namespace Library
 {
     public partial class SearchForm : Form
     {
+        DataTable resultTable;
         public SearchForm()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace Library
             }
             Book book = new Book();
             book.bkCode = code;
-            DataTable resultTable=BookDAL.FindByKeyword(book);
+            resultTable=BookDAL.FindByKeyword(book);
             dataGridView1.DataSource = resultTable;
         }
         /// <summary>
@@ -59,7 +60,14 @@ namespace Library
         private void BookDetail(object sender, EventArgs e)
         {
             Book book=new Book();
-            if(dataGridView1.SelectedRows.Count<=0){
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Not Exist!");
+                return;
+            }
+            if (resultTable.Rows.Count <= 0)
+            {
+                MessageBox.Show("Not Exist!");
                 return;
             }
             int id=(int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号

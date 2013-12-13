@@ -36,7 +36,7 @@
             this.图书查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.readerMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.cardRegistorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateCardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.查找读者ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +44,6 @@
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.密码修改ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.添加用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.查找用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
@@ -99,7 +98,7 @@
             // 
             this.readerMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cardRegistorToolStripMenuItem,
-            this.updateCardToolStripMenuItem});
+            this.查找读者ToolStripMenuItem});
             this.readerMenu.Name = "readerMenu";
             this.readerMenu.Size = new System.Drawing.Size(83, 21);
             this.readerMenu.Text = "读者管理(&E)";
@@ -110,19 +109,16 @@
             this.cardRegistorToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.cardRegistorToolStripMenuItem.Name = "cardRegistorToolStripMenuItem";
             this.cardRegistorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.cardRegistorToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.cardRegistorToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
             this.cardRegistorToolStripMenuItem.Text = "办理借书证(&R)";
             this.cardRegistorToolStripMenuItem.Click += new System.EventHandler(this.CardRegistor);
             // 
-            // updateCardToolStripMenuItem
+            // 查找读者ToolStripMenuItem
             // 
-            this.updateCardToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("updateCardToolStripMenuItem.Image")));
-            this.updateCardToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
-            this.updateCardToolStripMenuItem.Name = "updateCardToolStripMenuItem";
-            this.updateCardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.updateCardToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
-            this.updateCardToolStripMenuItem.Text = "借书证信息变更(&C)";
-            this.updateCardToolStripMenuItem.Click += new System.EventHandler(this.UpdateCard);
+            this.查找读者ToolStripMenuItem.Name = "查找读者ToolStripMenuItem";
+            this.查找读者ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.查找读者ToolStripMenuItem.Text = "查找读者";
+            this.查找读者ToolStripMenuItem.Click += new System.EventHandler(this.查找读者ToolStripMenuItem_Click);
             // 
             // viewMenu
             // 
@@ -137,14 +133,14 @@
             // toolBarToolStripMenuItem
             // 
             this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
-            this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.toolBarToolStripMenuItem.Text = "借书(&O)";
             this.toolBarToolStripMenuItem.Click += new System.EventHandler(this.Borrow);
             // 
             // statusBarToolStripMenuItem
             // 
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.statusBarToolStripMenuItem.Text = "续借(&S)";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.Renew);
             // 
@@ -159,8 +155,7 @@
             // 
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.密码修改ToolStripMenuItem,
-            this.添加用户ToolStripMenuItem,
-            this.查找用户ToolStripMenuItem});
+            this.添加用户ToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(83, 21);
             this.toolsMenu.Text = "用户管理(&T)";
@@ -168,23 +163,16 @@
             // 密码修改ToolStripMenuItem
             // 
             this.密码修改ToolStripMenuItem.Name = "密码修改ToolStripMenuItem";
-            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.密码修改ToolStripMenuItem.Text = "密码修改";
             this.密码修改ToolStripMenuItem.Click += new System.EventHandler(this.ChangePSW);
             // 
             // 添加用户ToolStripMenuItem
             // 
             this.添加用户ToolStripMenuItem.Name = "添加用户ToolStripMenuItem";
-            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.添加用户ToolStripMenuItem.Text = "添加用户";
             this.添加用户ToolStripMenuItem.Click += new System.EventHandler(this.AddUser);
-            // 
-            // 查找用户ToolStripMenuItem
-            // 
-            this.查找用户ToolStripMenuItem.Name = "查找用户ToolStripMenuItem";
-            this.查找用户ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.查找用户ToolStripMenuItem.Text = "查找用户";
-            this.查找用户ToolStripMenuItem.Click += new System.EventHandler(this.findUser);
             // 
             // helpMenu
             // 
@@ -248,7 +236,6 @@
         private System.Windows.Forms.ToolStripMenuItem newToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem readerMenu;
         private System.Windows.Forms.ToolStripMenuItem cardRegistorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateCardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewMenu;
         private System.Windows.Forms.ToolStripMenuItem statusBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolsMenu;
@@ -259,7 +246,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolBarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 添加用户ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 图书查询ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 查找用户ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 查找读者ToolStripMenuItem;
     }
 }
 

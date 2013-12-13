@@ -92,21 +92,14 @@ namespace Library
             fnb.Show();
         }
 
-        //更新图书信息
-        //private void UpdateBook(object sender, EventArgs e)
-        //{
-        //    //System.Windows.Forms.MessageBox.Show("新书入库菜单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
-        //    UpdateBookForm fub = new UpdateBookForm();
-        //    fub.MdiParent = this;
-        //    fub.StartPosition = FormStartPosition.CenterScreen;
-        //    fub.WindowState = FormWindowState.Maximized;
-        //    fub.Show();
-        //}
-
         //办理借书证
         private void CardRegistor(object sender, EventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show("办理借书证", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            NewReaderForm nr = new NewReaderForm();
+            nr.MdiParent = this;
+            nr.StartPosition = FormStartPosition.CenterScreen;
+            nr.WindowState = FormWindowState.Maximized;
+            nr.Show();
         }
 
         //借书证信息变更
@@ -205,6 +198,11 @@ namespace Library
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void findUser(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void 查找读者ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SearchUserForm fu = new SearchUserForm();
             fu.MdiParent = this;

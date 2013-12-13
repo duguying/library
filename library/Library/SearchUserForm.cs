@@ -141,6 +141,11 @@ namespace Library
             Reader reader = new Reader();
             if (dataGridView1.SelectedRows.Count <= 0)
             {
+                MessageBox.Show("Not Exist!");
+                return;
+            }
+            if (tmpTbl.Rows.Count<=0) {
+                MessageBox.Show("Not Exist!");
                 return;
             }
             int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
