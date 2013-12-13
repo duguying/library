@@ -13,13 +13,15 @@ namespace Library
 {
     public partial class MainForm : Form
     {
+        public string USER;
         public Window t_main;
         public static Form main_form;
         //private int childFormNumber = 0;
 
-        public MainForm(Window t_main)
+        public MainForm(Window t_main,string USER)
         {
             this.t_main = t_main;
+            this.USER = USER;
             MainForm.main_form = this;
             InitializeComponent();
         }
@@ -134,19 +136,22 @@ namespace Library
         //借书
         private void Borrow(object sender, EventArgs e)
         {
-
+            BorrowForm f = new BorrowForm(0);
+            f.Show();
         }
 
         //续借
         private void Renew(object sender, EventArgs e)
         {
-
+            BorrowForm f = new BorrowForm(2);
+            f.Show();
         }
 
         //还书
         private void ReturnBook(object sender, EventArgs e)
         {
-
+            BorrowForm f = new BorrowForm(1);
+            f.Show();
         }
 
         //权限
@@ -155,10 +160,24 @@ namespace Library
 
         }
 
-        //修改密码
+        /// <summary>
+        /// 修改当前用户密码
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ChangePSW(object sender, EventArgs e)
         {
-
+            if (this.USER == null)
+            {
+                System.Windows.MessageBox.Show("Error! No Username!!!");
+                return;
+            }
+            else {
+                ChangePWDForm cp = new ChangePWDForm(this.USER);
+                cp.Show();
+            }
+            
+            
         }
 #endregion
 

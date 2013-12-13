@@ -92,11 +92,11 @@
     <Compile Include="BorrowForm.Designer.cs">
       <DependentUpon>BorrowForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReturnForm.cs">
+    <Compile Include="ChangePWDForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ReturnForm.Designer.cs">
-      <DependentUpon>ReturnForm.cs</DependentUpon>
+    <Compile Include="ChangePWDForm.Designer.cs">
+      <DependentUpon>ChangePWDForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchForm.cs">
       <SubType>Form</SubType>
@@ -165,6 +165,9 @@
     <EmbeddedResource Include="BorrowForm.resx">
       <DependentUpon>BorrowForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangePWDForm.resx">
+      <DependentUpon>ChangePWDForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,9 +177,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReturnForm.resx">
-      <DependentUpon>ReturnForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.cs</DependentUpon>

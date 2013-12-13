@@ -22,6 +22,7 @@ namespace Library
     /// </summary>
     public partial class MainWindow : Window
     {
+        //public string USER;
         public MainWindow()
         {
             InitializeComponent();
@@ -42,9 +43,10 @@ namespace Library
             bool rst = AdminAction.AdminLogin(username, password);
             if (rst)
             {
-                MainForm win = new MainForm(this);
+                MainForm win = new MainForm(this,username);
                 win.Show();
                 this.Hide();
+                //this.USER = ;
             }
             else
             {
