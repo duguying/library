@@ -111,12 +111,6 @@
       <DependentUpon>SearchUserForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Tools.cs" />
-    <Compile Include="UpdateBookForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateBookForm.Designer.cs">
-      <DependentUpon>UpdateBookForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,9 +183,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SearchUserForm.resx">
       <DependentUpon>SearchUserForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UpdateBookForm.resx">
-      <DependentUpon>UpdateBookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserDetailForm.resx">
       <DependentUpon>UserDetailForm.cs</DependentUpon>

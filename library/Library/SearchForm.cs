@@ -63,20 +63,6 @@ namespace Library
                 return;
             }
             int id=(int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
-            //book.bkCode=dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
-            //book.bkName=dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
-            //book.bkAuthor=dataGridView1.SelectedRows[0].Cells[3].Value.ToString();
-            //book.bkPress=dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
-            //book.bkDatePress=(DateTime)dataGridView1.SelectedRows[0].Cells[5].Value;
-            //book.bkISBN=dataGridView1.SelectedRows[0].Cells[6].Value.ToString();
-            //book.bkCatalog=dataGridView1.SelectedRows[0].Cells[7].Value.ToString();
-            //book.bkLanguage=(short)dataGridView1.SelectedRows[0].Cells[8].Value;
-            //book.bkPages=(int)dataGridView1.SelectedRows[0].Cells[9].Value;
-            //book.bkPrice = float.Parse(dataGridView1.SelectedRows[0].Cells[10].Value.ToString());
-            //book.bkDateIn = (DateTime)dataGridView1.SelectedRows[0].Cells[11].Value;
-            //book.bkBrief=dataGridView1.SelectedRows[0].Cells[12].Value.ToString();
-            //book.bkStatus=dataGridView1.SelectedRows[0].Cells[13].Value.ToString();
-            //book.dataGridView1.SelectedRows[0].Cells[13];
             DataTable rt=BookDAL.GetBookById(id);
             book=Book.RowsToBook(rt.Rows);
 

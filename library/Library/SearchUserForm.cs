@@ -131,5 +131,24 @@ namespace Library
         {
             dataGridView1.Width=splitContainer1.Panel1.Width-10;
         }
+        /// <summary>
+        /// 读者详情
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ReaderDetail(object sender, EventArgs e)
+        {
+            Reader reader = new Reader();
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                return;
+            }
+            int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
+            DataTable rt = BookDAL.GetBookById(id);
+            reader = Reader.RowsToReader(rt.Rows);
+
+            UserDetailForm bdf = new UserDetailForm(reader);
+            bdf.Show();
+        }
     }
 }

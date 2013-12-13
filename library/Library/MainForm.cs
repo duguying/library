@@ -91,15 +91,15 @@ namespace Library
         }
 
         //更新图书信息
-        private void UpdateBook(object sender, EventArgs e)
-        {
-            //System.Windows.Forms.MessageBox.Show("新书入库菜单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
-            UpdateBookForm fub = new UpdateBookForm();
-            fub.MdiParent = this;
-            fub.StartPosition = FormStartPosition.CenterScreen;
-            fub.WindowState = FormWindowState.Maximized;
-            fub.Show();
-        }
+        //private void UpdateBook(object sender, EventArgs e)
+        //{
+        //    //System.Windows.Forms.MessageBox.Show("新书入库菜单", "提示", MessageBoxButtons.OK, MessageBoxIcon.Question);
+        //    UpdateBookForm fub = new UpdateBookForm();
+        //    fub.MdiParent = this;
+        //    fub.StartPosition = FormStartPosition.CenterScreen;
+        //    fub.WindowState = FormWindowState.Maximized;
+        //    fub.Show();
+        //}
 
         //办理借书证
         private void CardRegistor(object sender, EventArgs e)
