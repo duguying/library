@@ -37,5 +37,18 @@ namespace Library.BLL
             
             return login_result;
         }
+
+        public static int ChangePWD(string username, string oldpwd, string newpwd) {
+            string sql = @"declare @pwd nchar(50)
+set @pwd=(select adminPassword from TB_Admin where adminUsername='"+username+@"')
+select @pwd
+if(@pwd='"+oldpwd+@"')
+	update TB_Admin set adminPassword='"+newpwd+@"'
+	where adminUsername='"+username+@"'
+else
+	RAISERROR ('原密码错误',16,1);";
+            return SqlHelper.ExecuteNonQuery(sql);
+            
+        }
     }
 }

@@ -6,6 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Library.Model;
+using Library.DAL;
+using Library.DAL;
+using Library.BLL;
 
 namespace Library
 {
@@ -25,6 +29,9 @@ namespace Library
 
         private void BorrowForm_Load(object sender, EventArgs e)
         {
+            textBox1.Text = userid;
+            textBox2.Text = bookcode;
+
             if(type==2){
                 this.Text = label3.Text = button1.Text = "续借";
             }
@@ -40,17 +47,61 @@ namespace Library
         private void button1_Click(object sender, EventArgs e)
         {
             ///提交之前
-             if(bookcode==""){
-                MessageBox.Show("书籍馆藏条码为空！");
+             if(textBox2.Text==""){
+                MessageBox.Show("书籍ID为空！");
                 return;
-            }else if(userid==""){
+            }else if(textBox1.Text==""){
                 if(type==0){//借书时用户不能为空
                     MessageBox.Show("用户ID为空！");
                     return;
                 }
             }
 
+             Borrow br = new Borrow();
+             br.bkId = int.Parse(textBox2.Text);
+             br.rdId = int.Parse(textBox1.Text);
 
+             try { 
+             
+                 if (type == 2)
+                 {
+                     if (BorrowAction.Renew(br) > 0)
+                     {
+                         MessageBox.Show("续借成功！");
+                     }
+                     else {
+                         MessageBox.Show("续借失败");
+                         return;
+                     }
+                 }
+                 else if (type == 1)
+                 {
+                     if (BorrowAction.Back(br) > 0)
+                     {
+                         MessageBox.Show("续借成功！");
+                     }
+                     else
+                     {
+                         MessageBox.Show("续借失败");
+                         return;
+                     }
+                 }
+                 else
+                 {
+                     if (BorrowAction.Borrow(br) > 0)
+                     {
+                         MessageBox.Show("续借成功！");
+                     }
+                     else
+                     {
+                         MessageBox.Show("续借失败");
+                         return;
+                     }
+                 }
+
+             }catch(Exception ex){
+                 MessageBox.Show("借书失败！请检查信息！\n"+ex.Message);
+             }
 
             ///提交之后
              button1.Enabled = false;
