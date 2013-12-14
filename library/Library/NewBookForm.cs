@@ -111,5 +111,15 @@ namespace Library
         {
             label10.Text = DateTime.Now.ToString();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in panel1.Controls)
+            {
+                if (c.GetType().ToString() == "System.Windows.Forms.TextBox") {
+                    c.Text = "";
+                }
+            }
+        }
     }
 }

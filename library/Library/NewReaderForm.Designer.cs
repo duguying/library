@@ -49,7 +49,10 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -147,14 +150,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(181, 26);
+            this.textBox1.Location = new System.Drawing.Point(3, 19);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(228, 21);
             this.textBox1.TabIndex = 10;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(181, 59);
+            this.textBox2.Location = new System.Drawing.Point(3, 52);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(228, 21);
@@ -162,7 +165,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(181, 92);
+            this.textBox3.Location = new System.Drawing.Point(3, 85);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(228, 21);
@@ -170,7 +173,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(181, 125);
+            this.textBox4.Location = new System.Drawing.Point(3, 118);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(228, 21);
             this.textBox4.TabIndex = 13;
@@ -178,36 +181,41 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(181, 158);
+            this.comboBox1.Items.AddRange(new object[] {
+            "男",
+            "女"});
+            this.comboBox1.Location = new System.Drawing.Point(3, 151);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(228, 20);
             this.comboBox1.TabIndex = 14;
+            this.comboBox1.Text = "女";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(181, 191);
+            this.comboBox2.Location = new System.Drawing.Point(3, 184);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(228, 20);
             this.comboBox2.TabIndex = 15;
+            this.comboBox2.Text = "--请选择类型--";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(181, 224);
+            this.textBox5.Location = new System.Drawing.Point(3, 217);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(228, 21);
             this.textBox5.TabIndex = 16;
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(181, 257);
+            this.textBox6.Location = new System.Drawing.Point(3, 250);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(228, 21);
             this.textBox6.TabIndex = 17;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(181, 290);
+            this.textBox7.Location = new System.Drawing.Point(3, 283);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(228, 21);
             this.textBox7.TabIndex = 18;
@@ -218,24 +226,44 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 23);
             this.button1.TabIndex = 19;
-            this.button1.Text = "办理借书证";
+            this.button1.Text = "重置";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.textBox7);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Location = new System.Drawing.Point(156, 8);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(241, 315);
+            this.panel1.TabIndex = 20;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(475, 256);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(129, 23);
+            this.button2.TabIndex = 21;
+            this.button2.Text = "办理借书证";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // NewReaderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 335);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -248,7 +276,10 @@
             this.Controls.Add(this.label1);
             this.Name = "NewReaderForm";
             this.Text = "添加读者";
+            this.Load += new System.EventHandler(this.NewReaderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,5 +307,7 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -100,7 +100,7 @@ namespace Library
                  }
 
              }catch(Exception ex){
-                 MessageBox.Show("借书失败！请检查信息！\n"+ex.Message);
+                 MessageBox.Show("借书失败！请检查读者ID或书籍ID信息！");
              }
 
             ///提交之后
