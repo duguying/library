@@ -211,6 +211,11 @@ namespace Library
             fu.Show();
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.MessageBox.Show("计科11101班-李俊-201103233\nAuthor: Rex Lee(李俊)\nEmail:duguying2008@gmail.com\nSite:www.duguying.net");
+        }
+
 
     }
 }

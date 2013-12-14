@@ -109,14 +109,14 @@
             this.cardRegistorToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.cardRegistorToolStripMenuItem.Name = "cardRegistorToolStripMenuItem";
             this.cardRegistorToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.cardRegistorToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.cardRegistorToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.cardRegistorToolStripMenuItem.Text = "办理借书证(&R)";
             this.cardRegistorToolStripMenuItem.Click += new System.EventHandler(this.CardRegistor);
             // 
             // 查找读者ToolStripMenuItem
             // 
             this.查找读者ToolStripMenuItem.Name = "查找读者ToolStripMenuItem";
-            this.查找读者ToolStripMenuItem.Size = new System.Drawing.Size(220, 22);
+            this.查找读者ToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.查找读者ToolStripMenuItem.Text = "查找读者";
             this.查找读者ToolStripMenuItem.Click += new System.EventHandler(this.查找读者ToolStripMenuItem_Click);
             // 
@@ -163,14 +163,14 @@
             // 密码修改ToolStripMenuItem
             // 
             this.密码修改ToolStripMenuItem.Name = "密码修改ToolStripMenuItem";
-            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.密码修改ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.密码修改ToolStripMenuItem.Text = "密码修改";
             this.密码修改ToolStripMenuItem.Click += new System.EventHandler(this.ChangePSW);
             // 
             // 添加用户ToolStripMenuItem
             // 
             this.添加用户ToolStripMenuItem.Name = "添加用户ToolStripMenuItem";
-            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.添加用户ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.添加用户ToolStripMenuItem.Text = "添加用户";
             this.添加用户ToolStripMenuItem.Click += new System.EventHandler(this.AddUser);
             // 
@@ -185,8 +185,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "关于(&A) ... ...";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // statusStrip
             // 

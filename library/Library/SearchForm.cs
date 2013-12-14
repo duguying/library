@@ -78,6 +78,43 @@ namespace Library
             bdf.Show();
         }
 
+        private void 删除书籍ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Book book = new Book();
+            if (dataGridView1.SelectedRows.Count <= 0)
+            {
+                MessageBox.Show("Not Exist!");
+                return;
+            }
+            if (resultTable.Rows.Count <= 0)
+            {
+                MessageBox.Show("Not Exist!");
+                return;
+            }
+            int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
+            string bkname=(string)dataGridView1.SelectedRows[0].Cells[2].Value;
+            book.bkId = id;
+            book.bkName = bkname;
+
+            DialogResult dr = MessageBox.Show("确认删除" + bkname + "？", "对话框标题", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                //点确定的代码
+                try {
+                    BookDAL.Delete(book);
+                }catch(Exception ex){
+                    MessageBox.Show("删除失败！");
+                    return;
+                }
+                MessageBox.Show("删除成功");
+                FindByCode(null, null);//刷新当前列表
+            }
+            else
+            {   //点取消的代码 
+                return;
+            }
+        }
+
         
     }
 }
