@@ -14,6 +14,7 @@ namespace Library
     public partial class SearchForm : Form
     {
         DataTable resultTable;
+        Book book = new Book();
         public SearchForm()
         {
             InitializeComponent();
@@ -59,7 +60,7 @@ namespace Library
 
         private void BookDetail(object sender, EventArgs e)
         {
-            Book book=new Book();
+            Book tmp_book=new Book();
             if (dataGridView1.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Not Exist!");
@@ -70,17 +71,17 @@ namespace Library
                 MessageBox.Show("Not Exist!");
                 return;
             }
-            int id=(int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
-            DataTable rt=BookDAL.GetBookById(id);
-            book=Book.RowsToBook(rt.Rows);
+            //int id=(int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
+            DataTable rt = BookDAL.GetBookById(book.bkId);
+            tmp_book = Book.RowsToBook(rt.Rows);
 
-            BookDetailForm bdf = new BookDetailForm(book);
+            BookDetailForm bdf = new BookDetailForm(tmp_book);
             bdf.Show();
         }
 
         private void 删除书籍ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Book book = new Book();
+            
             if (dataGridView1.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Not Exist!");
@@ -91,12 +92,9 @@ namespace Library
                 MessageBox.Show("Not Exist!");
                 return;
             }
-            int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
-            string bkname=(string)dataGridView1.SelectedRows[0].Cells[2].Value;
-            book.bkId = id;
-            book.bkName = bkname;
 
-            DialogResult dr = MessageBox.Show("确认删除" + bkname + "？", "对话框标题", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            DialogResult dr = MessageBox.Show("确认删除" + book.bkName + "？", "对话框标题", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dr == DialogResult.OK)
             {
                 //点确定的代码
@@ -112,6 +110,24 @@ namespace Library
             else
             {   //点取消的代码 
                 return;
+            }
+        }
+
+        private void 借书ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BorrowForm bf = new BorrowForm(0,"",book.bkId.ToString());
+            bf.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (resultTable.Rows.Count>0)
+            {
+                int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
+                string bkname=(string)dataGridView1.SelectedRows[0].Cells[2].Value;
+                book.bkId = id;
+                book.bkName = bkname;
             }
         }
 

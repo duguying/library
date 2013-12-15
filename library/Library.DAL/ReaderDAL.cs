@@ -198,8 +198,45 @@ where rdID=@rdID";
         }
         #endregion
         #region 扩展操作
-        public static Reader GetObjectByID(int rdID) {
-            return null;
+        public static DataTable GetReaderByID(int rdID) {
+            string sql=@"select * from TB_Reader where rdId="+rdID;
+            DataTable rt = SqlHelper.GetDataTable(sql,null,"tmpReaderTable");
+            //rt.Rows[0].ItemArray[0].ToString().Trim();
+            return rt;
+        }
+
+        public static int UpdateInfo(Reader reader_record)
+        {
+            int rows = 0;
+            string sql = @"update TB_Reader set 
+rdName=@rdName,
+rdSex=@rdSex,
+rdType=@rdType,
+rdDept=@rdDept,
+rdPhone=@rdPhone,
+rdEmail=@rdEmail
+
+where rdID=@rdID
+";
+            SqlParameter[] parameters = { 
+                                            new SqlParameter("@rdID",reader_record.rdID),
+                                            new SqlParameter("@rdName",reader_record.rdName),
+                                            new SqlParameter("@rdSex",reader_record.rdSex),
+                                            new SqlParameter("@rdType",reader_record.rdType),
+                                            new SqlParameter("@rdDept",reader_record.rdDept),
+                                            new SqlParameter("@rdPhone",reader_record.rdPhone),
+                                            new SqlParameter("@rdEmail",reader_record.rdEmail),
+                                        };
+            try
+            {
+                rows = SqlHelper.ExecuteNonQuery(sql, parameters);
+            }
+            catch (SqlException e)
+            {
+                throw new Exception(e.Message);
+            }
+
+            return rows;
         }
         #endregion
     }

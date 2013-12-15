@@ -117,6 +117,7 @@ namespace Library
             try
             {
                 ReaderDAL.Add(rd);
+                MessageBox.Show("添加成功");
             }
             catch (Exception ex)
             {

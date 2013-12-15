@@ -149,7 +149,14 @@ namespace Library
                 return;
             }
             int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
-            DataTable rt = BookDAL.GetBookById(id);
+            DataTable rt;
+            try {
+                rt = ReaderDAL.GetReaderByID(id);
+            }catch(Exception ex){
+                MessageBox.Show("获取详细信息失败，当前用户非法！"+ex.Message);
+                return;
+            }
+            
             reader = Reader.RowsToReader(rt.Rows);
 
             UserDetailForm bdf = new UserDetailForm(reader);

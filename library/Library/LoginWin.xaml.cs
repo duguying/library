@@ -43,7 +43,7 @@ namespace Library
             bool rst = AdminAction.AdminLogin(username, password);
             if (rst)
             {
-                MainForm win = new MainForm(this,username);
+                MainForm win = new MainForm(this, username);
                 win.Show();
                 this.Hide();
                 //this.USER = ;

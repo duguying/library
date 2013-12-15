@@ -51,14 +51,14 @@ namespace Library.Model
             rd.rdPassword=(string)row[0].ItemArray[2];
             rd.rdName=(string)row[0].ItemArray[3];
             rd.rdSex=(string)row[0].ItemArray[4];
-            rd.rdType=(int)row[0].ItemArray[5];
+            rd.rdType=(short)row[0].ItemArray[5];
             rd.rdDept=(string)row[0].ItemArray[6];
             rd.rdPhone=(string)row[0].ItemArray[7];
             rd.rdEmail=(string)row[0].ItemArray[8];
             rd.rdDateReg=(DateTime)row[0].ItemArray[9];
             rd.rdPhoto=(byte[])row[0].ItemArray[10];
             rd.rdStatus=(string)row[0].ItemArray[11];
-            rd.rdHaveBorrowNum = (int)row[0].ItemArray[1];
+            rd.rdHaveBorrowNum = (int)row[0].ItemArray[12];
             return rd;
         }
     }
