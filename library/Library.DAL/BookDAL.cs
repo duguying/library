@@ -171,10 +171,7 @@ bkCatalog=@bkCatalog,
 bkLanguage=@bkLanguage,
 bkPages=@bkPages,
 bkPrice=@bkPrice,
-bkDateIn=@bkDateIn,
-bkBrief=@bkBrief,
-bkCover=@bkCover,
-bkStatus=@bkStatus
+bkBrief=@bkBrief
 where bkId=@bkId
 ";
             SqlParameter[] parameters = { 
@@ -189,10 +186,10 @@ where bkId=@bkId
                                             new SqlParameter("@bkLanguage",book_record.bkLanguage),
                                             new SqlParameter("@bkPages",book_record.bkPages),
                                             new SqlParameter("@bkPrice",book_record.bkPrice),
-                                            new SqlParameter("@bkDateIn",book_record.bkDateIn),
+                                            //new SqlParameter("@bkDateIn",book_record.bkDateIn),
                                             new SqlParameter("@bkBrief",book_record.bkBrief),
-                                            new SqlParameter("@bkCover",book_record.bkCover),
-                                            new SqlParameter("@bkStatus",book_record.bkStatus),
+                                            //new SqlParameter("@bkCover",book_record.bkCover),
+                                            //new SqlParameter("@bkStatus",book_record.bkStatus),
                                         };
             #endregion
 

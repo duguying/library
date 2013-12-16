@@ -60,6 +60,7 @@ namespace Library
 
         private void BookDetail(object sender, EventArgs e)
         {
+            if (this.book.bkId == 0) { return; }
             Book tmp_book=new Book();
             if (dataGridView1.SelectedRows.Count <= 0)
             {
@@ -71,7 +72,7 @@ namespace Library
                 MessageBox.Show("Not Exist!");
                 return;
             }
-            //int id=(int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
+
             DataTable rt = BookDAL.GetBookById(book.bkId);
             tmp_book = Book.RowsToBook(rt.Rows);
 
@@ -81,7 +82,7 @@ namespace Library
 
         private void 删除书籍ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            if (this.book.bkId == 0) { return; }
             if (dataGridView1.SelectedRows.Count <= 0)
             {
                 MessageBox.Show("Not Exist!");
@@ -115,6 +116,7 @@ namespace Library
 
         private void 借书ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (this.book.bkId == 0) { return; }
             BorrowForm bf = new BorrowForm(0,"",book.bkId.ToString());
             bf.Show();
         }
@@ -122,13 +124,27 @@ namespace Library
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if (resultTable.Rows.Count>0)
+            
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (resultTable.Rows.Count > 0)
             {
-                int id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
-                string bkname=(string)dataGridView1.SelectedRows[0].Cells[2].Value;
-                book.bkId = id;
-                book.bkName = bkname;
+                int id;
+                if (dataGridView1.SelectedRows[0].Cells[0].Value.ToString() != "")
+                {
+                    id = (int)dataGridView1.SelectedRows[0].Cells[0].Value;//书籍编号
+                }
+                else {
+                    return;
+                }
+                
+                string bkname = (string)dataGridView1.SelectedRows[0].Cells[2].Value;
+                this.book.bkId = id;
+                this.book.bkName = bkname;
             }
+
         }
 
         

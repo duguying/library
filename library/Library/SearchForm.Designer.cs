@@ -376,6 +376,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(913, 512);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // contextMenuStrip1
@@ -390,21 +391,21 @@
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.删除ToolStripMenuItem.Text = "详细信息";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.BookDetail);
             // 
             // 删除书籍ToolStripMenuItem
             // 
             this.删除书籍ToolStripMenuItem.Name = "删除书籍ToolStripMenuItem";
-            this.删除书籍ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.删除书籍ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.删除书籍ToolStripMenuItem.Text = "删除书籍";
             this.删除书籍ToolStripMenuItem.Click += new System.EventHandler(this.删除书籍ToolStripMenuItem_Click);
             // 
             // 借书ToolStripMenuItem
             // 
             this.借书ToolStripMenuItem.Name = "借书ToolStripMenuItem";
-            this.借书ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.借书ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.借书ToolStripMenuItem.Text = "借书";
             this.借书ToolStripMenuItem.Click += new System.EventHandler(this.借书ToolStripMenuItem_Click);
             // 

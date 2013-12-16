@@ -30,20 +30,20 @@
         {
             this.label_bkName_title = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label_bkBrief = new System.Windows.Forms.Label();
-            this.label_bkStatus = new System.Windows.Forms.Label();
-            this.label_bkPrice = new System.Windows.Forms.Label();
-            this.label_bkPage = new System.Windows.Forms.Label();
-            this.label_bkLanguage = new System.Windows.Forms.Label();
-            this.label_bkCatalog = new System.Windows.Forms.Label();
-            this.label_bkISBN = new System.Windows.Forms.Label();
-            this.label_bkPressDate = new System.Windows.Forms.Label();
-            this.label_bkPress = new System.Windows.Forms.Label();
-            this.label_bkAuthor = new System.Windows.Forms.Label();
-            this.label_bkName = new System.Windows.Forms.Label();
-            this.label_bkCode = new System.Windows.Forms.Label();
-            this.label_bkId = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -57,21 +57,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_bkName_title
@@ -87,31 +78,10 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox8);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Controls.Add(this.label_bkStatus);
-            this.panel1.Controls.Add(this.label_bkPrice);
-            this.panel1.Controls.Add(this.label_bkPage);
-            this.panel1.Controls.Add(this.label_bkLanguage);
-            this.panel1.Controls.Add(this.label_bkCatalog);
-            this.panel1.Controls.Add(this.label_bkISBN);
-            this.panel1.Controls.Add(this.label_bkPressDate);
-            this.panel1.Controls.Add(this.label_bkPress);
-            this.panel1.Controls.Add(this.label_bkAuthor);
-            this.panel1.Controls.Add(this.label_bkName);
-            this.panel1.Controls.Add(this.label_bkCode);
-            this.panel1.Controls.Add(this.label_bkId);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
@@ -131,132 +101,120 @@
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(411, 225);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(157, 23);
+            this.button1.TabIndex = 40;
+            this.button1.Text = "修改书籍信息";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(8, 96);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(189, 21);
+            this.dateTimePicker1.TabIndex = 39;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(8, 244);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(189, 20);
+            this.comboBox3.TabIndex = 38;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "英文",
+            "日文",
+            "俄文",
+            "德文",
+            "法文",
+            "中文"});
+            this.comboBox2.Location = new System.Drawing.Point(8, 167);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(189, 20);
+            this.comboBox2.TabIndex = 37;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(8, 144);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(189, 20);
+            this.comboBox1.TabIndex = 36;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(8, 219);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(189, 21);
+            this.textBox8.TabIndex = 35;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(8, 193);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(189, 21);
+            this.textBox7.TabIndex = 34;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(8, 120);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(189, 21);
+            this.textBox6.TabIndex = 33;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(8, 71);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(189, 21);
+            this.textBox5.TabIndex = 32;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(8, 49);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(189, 21);
+            this.textBox4.TabIndex = 31;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(8, 25);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(189, 21);
+            this.textBox3.TabIndex = 30;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(8, 1);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(189, 21);
+            this.textBox2.TabIndex = 29;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(113, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(189, 21);
+            this.textBox1.TabIndex = 28;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label_bkBrief);
+            this.groupBox1.Controls.Add(this.textBox9);
             this.groupBox1.Location = new System.Drawing.Point(11, 305);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(557, 88);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "简介";
-            // 
-            // label_bkBrief
-            // 
-            this.label_bkBrief.AutoSize = true;
-            this.label_bkBrief.Location = new System.Drawing.Point(6, 17);
-            this.label_bkBrief.Name = "label_bkBrief";
-            this.label_bkBrief.Size = new System.Drawing.Size(29, 12);
-            this.label_bkBrief.TabIndex = 25;
-            this.label_bkBrief.Text = "简介";
-            // 
-            // label_bkStatus
-            // 
-            this.label_bkStatus.AutoSize = true;
-            this.label_bkStatus.Location = new System.Drawing.Point(121, 283);
-            this.label_bkStatus.Name = "label_bkStatus";
-            this.label_bkStatus.Size = new System.Drawing.Size(53, 12);
-            this.label_bkStatus.TabIndex = 26;
-            this.label_bkStatus.Text = "在馆状态";
-            // 
-            // label_bkPrice
-            // 
-            this.label_bkPrice.AutoSize = true;
-            this.label_bkPrice.Location = new System.Drawing.Point(121, 258);
-            this.label_bkPrice.Name = "label_bkPrice";
-            this.label_bkPrice.Size = new System.Drawing.Size(29, 12);
-            this.label_bkPrice.TabIndex = 24;
-            this.label_bkPrice.Text = "价格";
-            // 
-            // label_bkPage
-            // 
-            this.label_bkPage.AutoSize = true;
-            this.label_bkPage.Location = new System.Drawing.Point(121, 232);
-            this.label_bkPage.Name = "label_bkPage";
-            this.label_bkPage.Size = new System.Drawing.Size(29, 12);
-            this.label_bkPage.TabIndex = 23;
-            this.label_bkPage.Text = "页码";
-            // 
-            // label_bkLanguage
-            // 
-            this.label_bkLanguage.AutoSize = true;
-            this.label_bkLanguage.Location = new System.Drawing.Point(121, 206);
-            this.label_bkLanguage.Name = "label_bkLanguage";
-            this.label_bkLanguage.Size = new System.Drawing.Size(29, 12);
-            this.label_bkLanguage.TabIndex = 22;
-            this.label_bkLanguage.Text = "语种";
-            // 
-            // label_bkCatalog
-            // 
-            this.label_bkCatalog.AutoSize = true;
-            this.label_bkCatalog.Location = new System.Drawing.Point(121, 183);
-            this.label_bkCatalog.Name = "label_bkCatalog";
-            this.label_bkCatalog.Size = new System.Drawing.Size(29, 12);
-            this.label_bkCatalog.TabIndex = 21;
-            this.label_bkCatalog.Text = "分类";
-            // 
-            // label_bkISBN
-            // 
-            this.label_bkISBN.AutoSize = true;
-            this.label_bkISBN.Location = new System.Drawing.Point(121, 159);
-            this.label_bkISBN.Name = "label_bkISBN";
-            this.label_bkISBN.Size = new System.Drawing.Size(29, 12);
-            this.label_bkISBN.TabIndex = 20;
-            this.label_bkISBN.Text = "ISBN";
-            // 
-            // label_bkPressDate
-            // 
-            this.label_bkPressDate.AutoSize = true;
-            this.label_bkPressDate.Location = new System.Drawing.Point(121, 135);
-            this.label_bkPressDate.Name = "label_bkPressDate";
-            this.label_bkPressDate.Size = new System.Drawing.Size(53, 12);
-            this.label_bkPressDate.TabIndex = 19;
-            this.label_bkPressDate.Text = "出版日期";
-            // 
-            // label_bkPress
-            // 
-            this.label_bkPress.AutoSize = true;
-            this.label_bkPress.Location = new System.Drawing.Point(121, 110);
-            this.label_bkPress.Name = "label_bkPress";
-            this.label_bkPress.Size = new System.Drawing.Size(41, 12);
-            this.label_bkPress.TabIndex = 18;
-            this.label_bkPress.Text = "出版社";
-            // 
-            // label_bkAuthor
-            // 
-            this.label_bkAuthor.AutoSize = true;
-            this.label_bkAuthor.Location = new System.Drawing.Point(121, 88);
-            this.label_bkAuthor.Name = "label_bkAuthor";
-            this.label_bkAuthor.Size = new System.Drawing.Size(29, 12);
-            this.label_bkAuthor.TabIndex = 17;
-            this.label_bkAuthor.Text = "作者";
-            // 
-            // label_bkName
-            // 
-            this.label_bkName.AutoSize = true;
-            this.label_bkName.Location = new System.Drawing.Point(121, 64);
-            this.label_bkName.Name = "label_bkName";
-            this.label_bkName.Size = new System.Drawing.Size(29, 12);
-            this.label_bkName.TabIndex = 16;
-            this.label_bkName.Text = "书名";
-            // 
-            // label_bkCode
-            // 
-            this.label_bkCode.AutoSize = true;
-            this.label_bkCode.Location = new System.Drawing.Point(121, 40);
-            this.label_bkCode.Name = "label_bkCode";
-            this.label_bkCode.Size = new System.Drawing.Size(29, 12);
-            this.label_bkCode.TabIndex = 15;
-            this.label_bkCode.Text = "条码";
-            // 
-            // label_bkId
-            // 
-            this.label_bkId.AutoSize = true;
-            this.label_bkId.Location = new System.Drawing.Point(121, 16);
-            this.label_bkId.Name = "label_bkId";
-            this.label_bkId.Size = new System.Drawing.Size(29, 12);
-            this.label_bkId.TabIndex = 14;
-            this.label_bkId.Text = "编号";
             // 
             // label14
             // 
@@ -375,105 +333,35 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // textBox1
+            // textBox9
             // 
-            this.textBox1.Location = new System.Drawing.Point(205, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 21);
-            this.textBox1.TabIndex = 28;
-            this.textBox1.Visible = false;
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(8, 21);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(543, 61);
+            this.textBox9.TabIndex = 0;
             // 
-            // textBox2
+            // panel2
             // 
-            this.textBox2.Location = new System.Drawing.Point(205, 36);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(145, 21);
-            this.textBox2.TabIndex = 29;
-            this.textBox2.Visible = false;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(205, 60);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(145, 21);
-            this.textBox3.TabIndex = 30;
-            this.textBox3.Visible = false;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(205, 84);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(145, 21);
-            this.textBox4.TabIndex = 31;
-            this.textBox4.Visible = false;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(205, 106);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(145, 21);
-            this.textBox5.TabIndex = 32;
-            this.textBox5.Visible = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(205, 155);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(145, 21);
-            this.textBox6.TabIndex = 33;
-            this.textBox6.Visible = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(205, 228);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(145, 21);
-            this.textBox7.TabIndex = 34;
-            this.textBox7.Visible = false;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(205, 254);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(145, 21);
-            this.textBox8.TabIndex = 35;
-            this.textBox8.Visible = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(205, 179);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(145, 20);
-            this.comboBox1.TabIndex = 36;
-            this.comboBox1.Visible = false;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(205, 202);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(145, 20);
-            this.comboBox2.TabIndex = 37;
-            this.comboBox2.Visible = false;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(205, 279);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(145, 20);
-            this.comboBox3.TabIndex = 38;
-            this.comboBox3.Visible = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(205, 131);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(145, 21);
-            this.dateTimePicker1.TabIndex = 39;
-            this.dateTimePicker1.Visible = false;
+            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.comboBox3);
+            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.comboBox1);
+            this.panel2.Controls.Add(this.textBox5);
+            this.panel2.Controls.Add(this.textBox8);
+            this.panel2.Controls.Add(this.textBox6);
+            this.panel2.Controls.Add(this.textBox7);
+            this.panel2.Enabled = false;
+            this.panel2.Location = new System.Drawing.Point(105, 34);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 286);
+            this.panel2.TabIndex = 41;
             // 
             // BookDetailForm
             // 
@@ -490,6 +378,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -506,19 +396,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label_bkBrief;
-        private System.Windows.Forms.Label label_bkStatus;
-        private System.Windows.Forms.Label label_bkPrice;
-        private System.Windows.Forms.Label label_bkPage;
-        private System.Windows.Forms.Label label_bkLanguage;
-        private System.Windows.Forms.Label label_bkCatalog;
-        private System.Windows.Forms.Label label_bkISBN;
-        private System.Windows.Forms.Label label_bkPressDate;
-        private System.Windows.Forms.Label label_bkPress;
-        private System.Windows.Forms.Label label_bkAuthor;
-        private System.Windows.Forms.Label label_bkName;
-        private System.Windows.Forms.Label label_bkCode;
-        private System.Windows.Forms.Label label_bkId;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
@@ -538,5 +415,8 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Panel panel2;
     }
 }
