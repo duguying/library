@@ -43,6 +43,7 @@ namespace Library
             adm.adminLastLoginDate = DateTime.Now;
             try {
                 AdminDAL.Add(adm);
+                MessageBox.Show("添加成功");
             }catch(Exception ex){
                 MessageBox.Show("添加失败！");
             }

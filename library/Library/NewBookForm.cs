@@ -92,7 +92,7 @@ namespace Library
                     MessageBox.Show("添加成功！");
                 }
             }catch(Exception ex){
-                throw new Exception(ex.Message+"\n添加失败！");
+                MessageBox.Show(ex.Message+"\n添加失败！");
             }
         }
 
