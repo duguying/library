@@ -78,11 +78,11 @@ namespace Library
                  {
                      if (BorrowAction.Back(br) > 0)
                      {
-                         MessageBox.Show("续借成功！");
+                         MessageBox.Show("还书成功！");
                      }
                      else
                      {
-                         MessageBox.Show("续借失败");
+                         MessageBox.Show("还书失败");
                          return;
                      }
                  }
@@ -90,11 +90,11 @@ namespace Library
                  {
                      if (BorrowAction.Borrow(br) > 0)
                      {
-                         MessageBox.Show("续借成功！");
+                         MessageBox.Show("借书成功！");
                      }
                      else
                      {
-                         MessageBox.Show("续借失败");
+                         MessageBox.Show("借书失败");
                          return;
                      }
                  }

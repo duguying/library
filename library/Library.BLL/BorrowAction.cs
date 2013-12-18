@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
+using System.Data;
 using Library.Model;
 using Library.DAL;
 
@@ -14,24 +16,21 @@ namespace Library.BLL
         /// </summary>
         /// <param name="br"></param>
         /// <returns></returns>
-        public static decimal Borrow(Borrow br) {
-            decimal result=0;
-            int rdId = br.rdId;
-            int bkId = br.bkId;
+        public static int Borrow(Borrow br) {
+            int result=0;
+            string sql = @"exec borrow @bkId,@rdId,@opId";
+            SqlParameter[] parameters = { 
+                                            new SqlParameter("@bkId",br.bkId),
+                                            new SqlParameter("@rdId",br.rdId),
+                                            new SqlParameter("@opId",br.OperatorRetId),
+                                        };
 
-            result = BorrowDAL.Add(br);
-            string sql = @"update TB_Book set
-bkStatus='借出'
-where bkId="+bkId;
-            if (result == 0) { return 0; }
-            result=SqlHelper.ExecuteNonQuery(sql);
-            if (result == 0) { return 0; }
-            sql = @"update TB_Reader set
-rdHaveBorrowNum=(select rdHaveBorrowNum from TB_Reader where rdID="+rdId+@")+1
-where rdID="+rdId;
-            result=SqlHelper.ExecuteNonQuery(sql);
-            if (result == 0) { return 0; }
-            
+            result = SqlHelper.ExecuteNonQuery(sql, parameters);
+            if (result == 0)
+            {
+                return 0;
+            }
+
             return result;
         }
         /// <summary>
@@ -40,15 +39,24 @@ where rdID="+rdId;
         /// <param name="br"></param>
         /// <returns></returns>
         public static int Renew(Borrow br) {
-            //int result = 0;
-            //int rdId = br.rdId;
-            //int bkId = br.bkId;
+            int result = 0;
+            int rdId = br.rdId;
+            int bkId = br.bkId;
 
-            //result = BorrowDAL.Add(br);
-//            string sql = @"update TB_Book set
-//bkStatus='借出'
-//where bkId=" + bkId;
-            return 1;
+            string sql = @"exec renew @bkId,@rdId,@opId";
+            SqlParameter[] parameters = { 
+                                            new SqlParameter("@bkId",br.bkId),
+                                            new SqlParameter("@rdId",br.rdId),
+                                            new SqlParameter("@opId",br.OperatorRetId),
+                                        };
+
+            result = SqlHelper.ExecuteNonQuery(sql, parameters);
+            if (result == 0)
+            {
+                return 0;
+            }
+
+            return result;
         }
         /// <summary>
         /// 还书
@@ -60,16 +68,17 @@ where rdID="+rdId;
             int rdId = br.rdId;
             int bkId = br.bkId;
 
-            string sql = @"update TB_Book set
-bkStatus='在馆'
-where bkId=" + bkId;
-            result = SqlHelper.ExecuteNonQuery(sql);
-            if (result == 0) { return 0; }
-            sql = @"update TB_Reader set
-rdHaveBorrowNum=(select rdHaveBorrowNum from TB_Reader where rdID=" + rdId + @")-1
-where rdID=" + rdId;
-            result = SqlHelper.ExecuteNonQuery(sql);
-            if (result == 0) { return 0; }
+            string sql = @"exec back @bkId,@rdId,@opId";
+            SqlParameter[] parameters = { 
+                                            new SqlParameter("@bkId",br.bkId),
+                                            new SqlParameter("@rdId",br.rdId),
+                                            new SqlParameter("@opId",br.OperatorRetId),
+                                        };
+
+            result = SqlHelper.ExecuteNonQuery(sql,parameters);
+            if (result == 0) { 
+                return 0; 
+            }
 
             return result;
         }
